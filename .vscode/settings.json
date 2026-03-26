@@ -1,0 +1,28 @@
+{
+  "Lua.diagnostics.globals": [
+    "Linemode"
+  ],
+  "Lua.diagnostics.disable": [
+    "undefined-global",
+    "cast-local-type"
+  ],
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd",
+  "nix.serverSettings": {
+    "formatting": {
+      "command": ["alejandra"],
+    },
+    "nixpkgs": {
+        "expr": "import (builtins.getFlake \"${workspaceFolder}/flake.nix\").inputs.nixpkgs {}"
+    },
+    "options": {
+      "home_manager": {
+       /*the below is for those who directly integrate their home manager into nixos, what others use is for stand alone home manager*/
+        "expr": "(builtins.getFlake \"${workspaceFolder}/flake.nix\").nixosConfigurations.strix-g18.options.home-manager.users.type.getSubOptions []"
+      },
+      "nixos": {
+        "expr": "(builtins.getFlake \"${workspaceFolder}/flake.nix\").nixosConfigurations.strix-g18.options"
+      }
+    },
+  }
+}

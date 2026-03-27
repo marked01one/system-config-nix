@@ -6,6 +6,9 @@
       efiSysMountPoint = "/boot";
     };
 
+    # Prevent keyboard latency bug by disabling autosuspending.
+    boot.kernelParams = ["usbcore.autosuspend=-1"];
+
     boot.loader.grub = {
       enable = true;
       efiSupport = true;
@@ -27,6 +30,10 @@
   # Bootloader module config for Limine.
   flake.nixosModules.bootloader.limine = {...}: {
     boot.loader.efi.canTouchEfiVariables = true;
+
+    # Prevent keyboard latency bug by disabling autosuspending.
+    boot.kernelParams = ["usbcore.autosuspend=-1"];
+
     boot.loader.limine = {
       enable = true;
 

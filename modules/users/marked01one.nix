@@ -1,4 +1,13 @@
 {...}: {
+  flake.nixosModules.username-marked01one = {...}: {
+    users.users.marked01one = {
+      isNormalUser = true;
+      description = "marked01one";
+      extraGroups = ["networkmanager" "wheel"];
+    };
+  };
+
+
   flake.homeModules.marked01one = {
     pkgs,
     config,

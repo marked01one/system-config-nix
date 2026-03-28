@@ -34,6 +34,7 @@
     ];
   };
 
+  # Core user homeModules for `username: marked01one`
   flake.homeModules.marked01one = {...}: let
     username = "marked01one";
   in {

@@ -1,8 +1,7 @@
 {...}: {
   # Install and configure `zsh` as a NixOS package.
   flake.nixosModules.zsh = {pkgs, ...}: let
-    logo = ./../../../assets/fastfetch/luminousslime-002.jpg;
-
+    # logo = ./../../../assets/fastfetch/luminousslime-002.jpg;
     graphical-terminals = [
       "WezTerm"
       "Alacritty"
@@ -14,13 +13,14 @@
   in {
     programs.zsh.enable = true;
     environment.pathsToLink = ["/share/zsh"];
+    users.defaultUserShell = pkgs.zsh;
 
     # Shell script code called during zsh shell initialisation.
     programs.zsh.shellInit = ''
-      # shell
+      # syntax: shell
       # Matches any terminal in the list via a single regex check
       if [[ "$TERM_PROGRAM" =~ ^(${term-regex})$ ]]; then
-        ${pkgs.fastfetch}/bin/fastfetch --kitty-direct ${logo}
+        ${pkgs.fastfetch}/bin/fastfetch
       else
         ${pkgs.fastfetch}/bin/fastfetch
       fi

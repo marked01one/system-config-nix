@@ -1,6 +1,6 @@
 {...}: {
   # Bootloader module config for GRUB.
-  flake.nixosModules.bootloader.grub = {lib, ...}: {
+  flake.nixosModules.grub = {lib, ...}: {
     boot.loader.efi = {
       canTouchEfiVariables = false;
       efiSysMountPoint = "/boot";
@@ -28,7 +28,7 @@
   };
 
   # Bootloader module config for Limine.
-  flake.nixosModules.bootloader.limine = {...}: {
+  flake.nixosModules.limine = {...}: {
     boot.loader.efi.canTouchEfiVariables = true;
 
     # Prevent keyboard latency bug by disabling autosuspending.

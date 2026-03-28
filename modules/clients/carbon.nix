@@ -12,15 +12,17 @@
       self.nixosModules.carbon
       self.nixosModules.carbon-hardware
     ];
-
-    nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   };
 
   # Primary NixOS config module.
-  flake.nixosModule.carbon = {pkgs, ...}: {
+  flake.nixosModules.carbon = {...}: {
     imports = [
-      self.nixosModules.limine # Bootloader.
-      self.nixosModules.gnome # Window manager.
+      # Bootloader.
+      self.nixosModules.limine
+      # Window manager.
+      self.nixosModules.gnome
+      # Shell
+      self.nixosModules.zsh
 
       self.nixosModules.username-marked01one
     ];
@@ -28,7 +30,7 @@
     # Networking configs.
     networking.networkmanager.enable = true;
     networking.dhcpcd.setHostname = false;
-    networking.hostname = "carbon";
+    networking.hostName = "carbon";
 
     # Set your time zone.
     time.timeZone = "America/Los_Angeles";
@@ -55,13 +57,17 @@
     services.xserver.xkb.layout = "us";
     services.xserver.xkb.variant = "";
 
-    users.defaultUserShell = pkgs.zsh;
+    # Allow unfree packages
+    nixpkgs.config.allowUnfree = true;
 
-    users.users.marked01one = {
-      isNormalUser = true;
-      description = "marked01one";
-      extraGroups = ["networkmanager" "wheel"];
-      shell = pkgs.zsh;
+    system.stateVersion = "25.11";
+
+    nix = {
+      settings = {
+        allowed-users = ["marked01one"];
+        experimental-features = ["nix-command" "flakes"];
+      };
+      nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     };
   };
 

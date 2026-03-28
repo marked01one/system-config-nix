@@ -30,6 +30,7 @@
       # feature modules
       bat
       yt-dlp
+      wezterm
     ];
   };
 

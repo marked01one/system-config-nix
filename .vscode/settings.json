@@ -21,13 +21,9 @@
       },
       "options": {
         "nixos": {
-          "expr": "(builtins.getFlake \"/home/marked01one/.nixos\").nixosConfigurations.marked01one.options"
+          "expr": "(builtins.getFlake \"/home/marked01one/.nixos/flake.nix\").nixosConfigurations.marked01one.options"
         },
-        "flake-parts": {
-          "expr": "(builtins.getFlake \"/home/marked01one/.nixos\").debug.options"
-        }
       },
     }
   },
-  "nixEnvSelector.nixFile": "${workspaceFolder}/flake.nix"
 }

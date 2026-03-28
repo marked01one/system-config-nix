@@ -13,6 +13,7 @@
     imports = with self.nixosModules; [
       vscode
       git
+      firefox
     ];
 
     users.users.marked01one = {
@@ -22,8 +23,13 @@
       extraGroups = ["networkmanager" "wheel"];
     };
 
-    home-manager.users.marked01one.imports = [
-      self.homeModules.marked01one
+    home-manager.users.marked01one.imports = with self.homeModules; [
+      # core user home module.
+      marked01one
+
+      # feature modules
+      bat
+      yt-dlp
     ];
   };
 

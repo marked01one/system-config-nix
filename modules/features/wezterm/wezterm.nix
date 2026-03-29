@@ -1,0 +1,21 @@
+# GPU-accelerated cross-platform terminal emulator and multiplexer written by
+# @wez and implemented in Rust
+# https://wezterm.org/
+{...}: {
+  flake.homeModules.wezterm = {pkgs, ...}: {
+    programs.wezterm = {
+      enable = true;
+      enableZshIntegration = true;
+      package = pkgs.wezterm;
+    };
+
+    home.file = {
+      ".config/wezterm" = {
+        source = ./../dotfiles/wezterm;
+        recursive = true;
+      };
+    };
+
+    home.sessionVariables.TERMINAL = "wezterm";
+  };
+}

@@ -10,13 +10,6 @@
     config,
     ...
   }: {
-    xdg.desktopEntries.firefox = {
-      name = "Firefox Developer Edition";
-      exec = "firefox-devedition";
-      icon = "firefox-devedition";
-      type = "Application";
-    };
-
     programs.firefox = {
       enable = true;
       package = pkgs.firefox-devedition;
@@ -108,52 +101,17 @@
           "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;
           "sidebar.visibility" = "expand-on-hover";
 
+          # Minimize new tab page.
+          "browser.newtabpage.activity-stream.showSearch" = true;
+          "browser.newtabpage.activity-stream.feeds.topsite" = false;
+          "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
+          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+          "browser.newtabpage.activity-stream.showSponsored" = false;
+          "browser.newtabpage.activity-stream.feeds.snippets" = false;
+
           # Toolbar customizations
-          "browser.uiCustomization.state" = ''
-            // syntax: json
-            {
-              "placements":{
-                "widget-overflow-fixed-list": [],
-                "unified-extensions-area": [
-                  "_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action",
-                  "ublock0_raymondhill_net-browser-action"
-                ],
-                "nav-bar": [
-                  "back-button",
-                  "forward-button",
-                  "stop-reload-button",
-                  "customizableui-special-spring1",
-                  "vertical-spacer",
-                  "urlbar-container",
-                  "customizableui-special-spring2",
-                  "downloads-button",
-                  "unified-extensions-button",
-                  "sidebar-button"
-                ],
-                "toolbar-menubar": ["menubar-items"],
-                "TabsToolbar":[],
-                "vertical-tabs":["tabbrowser-tabs"],
-                "PersonalToolbar":["import-button","personal-bookmarks"]
-              },
-              "seen":[
-                "developer-button",
-                "profiler-button",
-                "_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action",
-                "ublock0_raymondhill_net-browser-action",
-                "screenshot-button"
-              ],
-              "dirtyAreaCache":[
-                "nav-bar",
-                "vertical-tabs",
-                "unified-extensions-area",
-                "PersonalToolbar",
-                "toolbar-menubar",
-                "TabsToolbar"
-              ],
-              "currentVersion": 23,
-              "newElementCount":3
-            }
-          '';
+          "browser.uiCustomization.state" = "{\"placements\":{\"widget-overflow-fixed-list\":[],\"unified-extensions-area\":[\"ublock0_raymondhill_net-browser-action\",\"_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action\"],\"nav-bar\":[\"back-button\",\"forward-button\",\"urlbar-container\",\"vertical-spacer\",\"sidebar-button\",\"unified-extensions-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[],\"vertical-tabs\":[\"tabbrowser-tabs\"],\"PersonalToolbar\":[\"personal-bookmarks\"]},\"seen\":[\"developer-button\",\"profiler-button\",\"ublock0_raymondhill_net-browser-action\",\"_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action\",\"screenshot-button\"],\"dirtyAreaCache\":[\"unified-extensions-area\",\"nav-bar\",\"TabsToolbar\",\"vertical-tabs\"],\"currentVersion\":23,\"newElementCount\":1}";
         };
       };
     };

@@ -10,12 +10,7 @@
 
   # NixOS Module for `username: marked01one`
   flake.nixosModules.marked01one = {...}: {
-    imports = with self.nixosModules; [
-      vscode
-      git
-      firefox
-    ];
-
+    # NixOS-side user declaration.
     users.users.marked01one = {
       enable = true;
       isNormalUser = true;
@@ -23,6 +18,14 @@
       extraGroups = ["networkmanager" "wheel"];
     };
 
+    # NixOS module imports
+    imports = with self.nixosModules; [
+      vscode
+      git
+      firefox
+    ];
+
+    # Home Manager module imports.
     home-manager.users.marked01one.imports = with self.homeModules; [
       # core user home module.
       marked01one
@@ -31,6 +34,8 @@
       bat
       yt-dlp
       wezterm
+      anydesk
+      tailscale
     ];
   };
 

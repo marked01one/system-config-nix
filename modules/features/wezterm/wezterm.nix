@@ -11,7 +11,7 @@
 
     home.file = {
       ".config/wezterm" = {
-        source = ./../dotfiles/wezterm;
+        source = ./lua;
         recursive = true;
       };
     };

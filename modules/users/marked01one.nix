@@ -23,6 +23,7 @@
       vscode
       git
       firefox
+      tailscale
     ];
 
     # Home Manager module imports.
@@ -35,7 +36,6 @@
       yt-dlp
       wezterm
       anydesk
-      tailscale
     ];
   };
 

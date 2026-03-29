@@ -4,6 +4,8 @@
       tailscale
       tailscalesd
     ];
+
+    services.tailscale.enable = true;
   };
 
   flake.homeModules.tailscale = {pkgs, ...}: {

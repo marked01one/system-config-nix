@@ -1,4 +1,7 @@
+# Fast cd command that learns your habits
+# https://github.com/ajeetdsouza/zoxide
 {...}: {
+  # Install and configure `zoxide` using Home Manager.
   flake.homeModules.zoxide = {pkgs, ...}: {
     programs.zoxide = {
       enable = true;

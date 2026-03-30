@@ -27,6 +27,7 @@
       yt-dlp
       wezterm
       anydesk
+      scripts
       yazi
     ];
   };

@@ -168,7 +168,7 @@
       type = "Application";
       name = "Yazi";
       exec = "wezterm -e yazi";
-      icon = ./assets/logo.png;
+      icon = ./assets/yazi.png;
       # Do not make visible on desktop if wezterm is not installed!
       # TODO: Handle this error more gracefully! (i.e. display popup,...)
       noDisplay = !config.programs.wezterm.enable;

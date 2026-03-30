@@ -1,7 +1,7 @@
 # GPU-accelerated cross-platform terminal emulator and multiplexer written by
 # @wez and implemented in Rust
 # https://wezterm.org/
-{...}: {
+{inputs, ...}: {
   flake.homeModules.wezterm = {pkgs, ...}: {
     programs.wezterm = {
       enable = true;

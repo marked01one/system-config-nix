@@ -17,9 +17,9 @@
       device = "nodev";
 
       # Splash wallpaper for GRUB bootloader.
-      splashImage = ./../../assets/wallpapers/tumblr-fishbloc-001.jpg;
+      splashImage = ./assets/tumblr-fishbloc-001.jpg;
 
-      font = ./../../assets/fonts/nerdfont-jetbrainsmono.pf2;
+      font = ./assets/nerdfont-jetbrainsmono.pf2;
       fontSize = 24;
     };
 
@@ -38,7 +38,7 @@
       enable = true;
 
       style = {
-        wallpapers = [./../../assets/wallpapers/tumblr-fishbloc-001.jpg];
+        wallpapers = [./assets/tumblr-fishbloc-001.jpg];
         wallpaperStyle = "stretched";
 
         interface = {

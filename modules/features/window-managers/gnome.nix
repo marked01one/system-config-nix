@@ -1,5 +1,6 @@
 {...}: {
   flake.homeModules.gnome = {config, ...}: {
+    # Default applications settings.
     dconf.settings = {
       "org/gnome/desktop/default-applications" = {
         terminal =

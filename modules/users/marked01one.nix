@@ -29,6 +29,7 @@
       anydesk
       scripts
       yazi
+      stylix
     ];
   };
 

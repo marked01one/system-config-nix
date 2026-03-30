@@ -1,21 +1,18 @@
-{
-  self,
-  pkgs,
-  ...
-}: let
-  local-pkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
+{self, ...}: let
 in {
-  flake.nixosModules.scripts = {...}: {
+  flake.nixosModules.scripts = {pkgs, ...}: let
+    local-pkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
+  in {
     environment.systemPackages = with local-pkgs; [
       fcp
-      print-theme
     ];
   };
 
-  flake.homeModules.scripts = {...}: {
+  flake.homeModules.scripts = {pkgs, ...}: let
+    local-pkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
+  in {
     home.packages = with local-pkgs; [
       fcp
-      print-theme
     ];
   };
 }

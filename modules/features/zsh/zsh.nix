@@ -26,7 +26,11 @@
     # The configuration of the `zsh` NixOS module.
     config = {
       # Must include these packages.
-      environment.systemPackages = with pkgs; [bat starship];
+      environment.systemPackages = with pkgs; [
+        bat
+        starship
+        fastfetch
+      ];
 
       programs.zsh.enable = true;
       environment.pathsToLink = ["/share/zsh"];
@@ -37,7 +41,7 @@
         # syntax: shell
         # Matches any terminal in the list via a single regex check
         if [[ "$TERM_PROGRAM" =~ ^(${term-regex})$ ]]; then
-          ${pkgs.fastfetch}/bin/fastfetch
+          fastfetch --kitty-direct ${./assets/tumblr-luminousslime-002.jpg}
         fi
       '';
 
@@ -52,6 +56,7 @@
       self.homeModules.bat
       self.homeModules.starship
       self.homeModules.zoxide
+      self.homeModules.fastfetch
     ];
 
     programs.zsh = {

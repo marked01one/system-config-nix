@@ -3,6 +3,10 @@
 # https://wezterm.org/
 {...}: {
   flake.homeModules.wezterm = {pkgs, ...}: {
+    home.packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+    ];
+
     programs.wezterm = {
       enable = true;
       enableZshIntegration = true;

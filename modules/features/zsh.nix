@@ -42,11 +42,7 @@
       '';
 
       # Importing `zsh` Home Manager configs.
-      home-manager.users.${usernameConfig}.imports = [
-        self.homeModules.zsh
-        self.homeModules.bat
-        self.homeModules.starship
-      ];
+      home-manager.users.${usernameConfig}.imports = [self.homeModules.zsh];
     };
   };
 

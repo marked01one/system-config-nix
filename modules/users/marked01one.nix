@@ -18,24 +18,16 @@
       extraGroups = ["networkmanager" "wheel"];
     };
 
-    # NixOS module imports
-    imports = with self.nixosModules; [
-      vscode
-      git
-      firefox
-      tailscale
-    ];
-
     # Home Manager module imports.
     home-manager.users.marked01one.imports = with self.homeModules; [
       # core user home module.
       marked01one
 
       # feature modules
-      bat
       yt-dlp
       wezterm
       anydesk
+      yazi
     ];
   };
 

@@ -1,30 +1,53 @@
-{...}: {
+{self, ...}: {
   # Install and configure `zsh` as a NixOS package.
-  flake.nixosModules.zsh = {pkgs, ...}: let
-    # logo = ./../../../assets/fastfetch/luminousslime-002.jpg;
-    graphical-terminals = [
-      "WezTerm"
-      "Alacritty"
-      "kitty"
-      "Ghostty"
-    ];
-    # Generate the regex for the shell check
-    term-regex = builtins.concatStringsSep "|" graphical-terminals;
-  in {
-    programs.zsh.enable = true;
-    environment.pathsToLink = ["/share/zsh"];
-    users.defaultUserShell = pkgs.zsh;
+  flake.nixosModules.zsh = {
+    pkgs,
+    lib,
+    config,
+    ...
+  }: let
+    # Access the value of the user via this config.
+    usernameConfig = config.local.username;
+    defaultUser = "marked01one"; # Repo owner used as default username.
 
-    # Shell script code called during zsh shell initialisation.
-    programs.zsh.shellInit = ''
-      # syntax: shell
-      # Matches any terminal in the list via a single regex check
-      if [[ "$TERM_PROGRAM" =~ ^(${term-regex})$ ]]; then
-        ${pkgs.fastfetch}/bin/fastfetch
-      else
-        ${pkgs.fastfetch}/bin/fastfetch
-      fi
-    '';
+    # Graphical terminals compatible with Fastfetch image-based logos.
+    terminals = ["WezTerm" "Alacritty" "kitty" "Ghostty"];
+
+    # Generate the regex for the shell check
+    term-regex = builtins.concatStringsSep "|" terminals;
+  in {
+    # Locally declared options for `zsh` NixOS module.
+    options.local.username = lib.mkOption {
+      default = defaultUser;
+      type = lib.types.str;
+      description = "The primary username for zsh and home-manager config.";
+    };
+
+    # The configuration of the `zsh` NixOS module.
+    config = {
+      # Must include these packages.
+      environment.systemPackages = with pkgs; [bat starship];
+
+      programs.zsh.enable = true;
+      environment.pathsToLink = ["/share/zsh"];
+      users.defaultUserShell = pkgs.zsh;
+
+      # Shell script code called during zsh shell initialisation.
+      programs.zsh.shellInit = ''
+        # syntax: shell
+        # Matches any terminal in the list via a single regex check
+        if [[ "$TERM_PROGRAM" =~ ^(${term-regex})$ ]]; then
+          ${pkgs.fastfetch}/bin/fastfetch
+        fi
+      '';
+
+      # Importing `zsh` Home Manager configs.
+      home-manager.users.${usernameConfig}.imports = [
+        self.homeModules.zsh
+        self.homeModules.bat
+        self.homeModules.starship
+      ];
+    };
   };
 
   # Configure `zsh` using Home Manager.

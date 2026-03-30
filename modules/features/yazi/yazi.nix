@@ -8,9 +8,9 @@
     home.file = {
       # Avoid out-of-store file installation errors by specifying only Lua files
       # to be symlinked out-of-store.
-      ".config/yazi/init.lua".source = ./../dotfiles/yazi/init.lua;
+      ".config/yazi/init.lua".source = ./lua/init.lua;
       ".config/yazi/plugins" = {
-        source = ./../dotfiles/yazi/plugins;
+        source = ./lua/plugins;
         recursive = true;
       };
     };
@@ -168,7 +168,7 @@
       type = "Application";
       name = "Yazi";
       exec = "wezterm -e yazi";
-      icon = ./../assets/logos/yazi.png;
+      icon = ./assets/logo.png;
       # Do not make visible on desktop if wezterm is not installed!
       # TODO: Handle this error more gracefully! (i.e. display popup,...)
       noDisplay = !config.programs.wezterm.enable;

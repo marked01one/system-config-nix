@@ -1,6 +1,6 @@
 {...}: {
   perSystem = {pkgs, ...}: {
-    packages.grub-themes.night = let
+    packages.grub-themes-night = let
       # 1. Fetch the background image
       backgroundImage = pkgs.fetchurl {
         url = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop";

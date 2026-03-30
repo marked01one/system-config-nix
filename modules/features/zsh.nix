@@ -52,6 +52,12 @@
 
   # Configure `zsh` using Home Manager.
   flake.homeModules.zsh = {config, ...}: {
+    imports = [
+      self.homeModules.bat
+      self.homeModules.starship
+      self.homeModules.zoxide
+    ];
+
     programs.zsh = {
       enable = true;
       enableCompletion = true;

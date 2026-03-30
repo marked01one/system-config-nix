@@ -21,6 +21,11 @@
       marked01one
 
       home-manager
+      
+      vscode
+      git
+      firefox
+      tailscale
 
       limine # bootloader
       gnome # window manager

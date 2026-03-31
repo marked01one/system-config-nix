@@ -30,6 +30,7 @@
       scripts
       yazi
       stylix
+      vesktop
     ];
   };
 

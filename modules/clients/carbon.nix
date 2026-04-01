@@ -27,6 +27,7 @@
       zsh # shell
       nix-tools # Nix tools
 
+      # Core apps
       vscode
       git
       firefox

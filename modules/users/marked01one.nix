@@ -23,6 +23,9 @@
       # core user home module.
       marked01one
 
+      # Configuration modules
+      default-apps
+
       # feature modules
       yt-dlp
       wezterm

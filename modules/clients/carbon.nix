@@ -26,6 +26,7 @@
       gnome # window manager
       zsh # shell
       nix-tools # Nix tools
+      fonts # Font configs
 
       # Core apps
       vscode

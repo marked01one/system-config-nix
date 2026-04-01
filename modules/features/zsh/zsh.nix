@@ -30,6 +30,7 @@
         bat
         starship
         fastfetch
+        eza
       ];
 
       programs.zsh.enable = true;
@@ -57,6 +58,7 @@
       self.homeModules.starship
       self.homeModules.zoxide
       self.homeModules.fastfetch
+      self.homeModules.eza
     ];
 
     programs.zsh = {
@@ -77,6 +79,10 @@
           if config.programs.bat.enable
           then "bat"
           else "cat";
+        ls =
+          if config.programs.eza.enable
+          then "eza"
+          else "ls";
       };
 
       # Syntax highlighting settings.
@@ -84,7 +90,7 @@
         enable = true;
         highlighters = ["main" "brackets" "pattern"];
         patterns = {
-          "rm -rf *" = "fg=white,bold,bg=red";
+          "rm -rf *" = "fg=#ffffff,bold,bg=#ff0000";
         };
       };
 

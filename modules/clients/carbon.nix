@@ -20,16 +20,17 @@
       # Users
       marked01one
 
-      home-manager
-      
+      # Core features
+      home-manager # Home Manager
+      limine # bootloader
+      gnome # window manager
+      zsh # shell
+      nix-tools # Nix tools
+
       vscode
       git
       firefox
       tailscale
-
-      limine # bootloader
-      gnome # window manager
-      zsh # shell
     ];
 
     # Networking configs.

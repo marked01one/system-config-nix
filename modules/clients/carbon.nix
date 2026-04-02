@@ -20,14 +20,14 @@
       # Users
       marked01one
 
-      # Core features
       home-manager # Home Manager
       limine # bootloader
       gnome # window manager
       zsh # shell
       nix-tools # Nix tools
       fonts # Font configs
-      fingerprint
+      fingerprint # Fingerprint support
+      laptop # Power configs for laptop
 
       # Core apps
       vscode

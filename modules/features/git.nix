@@ -7,8 +7,11 @@
   };
 
   flake.homeModules.git = {...}: {
-    programs.git = {
-      enable = true;
+    programs.git.enable = true;
+    programs.git.lfs.enable = true;
+    programs.git.settings = {
+      user.name = "marked01one";
+      user.email = "mnihkhoitran2k3@gmail.com";
     };
   };
 }

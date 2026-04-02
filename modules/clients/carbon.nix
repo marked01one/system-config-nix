@@ -27,6 +27,7 @@
       zsh # shell
       nix-tools # Nix tools
       fonts # Font configs
+      fingerprint
 
       # Core apps
       vscode

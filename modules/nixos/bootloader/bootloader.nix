@@ -23,12 +23,13 @@
       fontSize = 24;
     };
 
+    # There can only one bootloader active at any time.
     boot.loader.systemd-boot.enable = lib.mkForce false;
     boot.loader.limine.enable = lib.mkForce false;
   };
 
   # Bootloader module config for Limine.
-  flake.nixosModules.limine = {...}: {
+  flake.nixosModules.limine = {lib, ...}: {
     boot.loader.efi.canTouchEfiVariables = true;
 
     # Prevent keyboard latency bug by disabling autosuspending.
@@ -36,6 +37,7 @@
 
     boot.loader.limine = {
       enable = true;
+      maxGenerations = 10;
 
       style = {
         wallpapers = [./assets/tumblr-fishbloc-001.jpg];
@@ -62,5 +64,9 @@
         };
       };
     };
+
+    # There can only one bootloader active at any time.
+    boot.loader.systemd-boot.enable = lib.mkForce false;
+    boot.loader.grub.enable = lib.mkForce false;
   };
 }

@@ -1,5 +1,9 @@
 {...}: {
-  flake.nixosModules.laptop = {...}: {
+  flake.nixosModules.laptop = {lib, ...}: {
+    # Override `power-profiles-daemon` when `tlp` is enabled.
+    # https://discourse.nixos.org/t/what-does-mkdefault-do-exactly
+    services.power-profiles-daemon.enable = lib.mkOverride 900 false;
+
     # Handle closing the lid.
     services.logind.settings.Login = {
       HandleLidSwitch = "poweroff";

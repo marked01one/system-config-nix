@@ -1,6 +1,6 @@
 {...}: {
-  perSystem = {...}: {
-    packages.obsidian-theme.tokyo-night = {pkgs, ...}: let
+  perSystem = {pkgs, ...}: {
+    packages.obsidian-theme.tokyo-night = let
       pname = "obsidian-tokyonight";
       version = "main";
       owner = "tcmmichaelb139";

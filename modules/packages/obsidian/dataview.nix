@@ -1,6 +1,6 @@
 {...}: {
-  perSystem = {...}: {
-    packages.obsidian-dataview = {pkgs, ...}: let
+  perSystem = {pkgs, ...}: {
+    packages.obsidian-dataview = let
       pname = "obsidian-dataview";
       version = "0.5.68";
       owner = "blacksmithgu";

@@ -1,6 +1,6 @@
 {...}: {
-  perSystem = {...}: {
-    packages.obsidian-calendar = {pkgs, ...}: let
+  perSystem = {pkgs, ...}: {
+    packages.obsidian-calendar = let
       pname = "obsidian-calendar-plugin";
       version = "1.5.10";
       owner = "liamcain";

@@ -1,6 +1,6 @@
 {...}: {
-  perSystem = {...}: {
-    packages.obsidian-excalidraw-plugin = {pkgs, ...}: let
+  perSystem = {pkgs, ...}: {
+    packages.obsidian-excalidraw-plugin = let
       pname = "obsidian-excalidraw-plugin";
       version = "2.20.3";
       owner = "zsviczian";

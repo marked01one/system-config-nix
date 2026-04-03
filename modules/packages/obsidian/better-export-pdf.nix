@@ -1,6 +1,6 @@
 {...}: {
-  perSystem = {...}: {
-    packages.obsidian-better-export-pdf = {pkgs, ...}: let
+  perSystem = {pkgs, ...}: {
+    packages.obsidian-better-export-pdf = let
       pname = "obsidian-better-export-pdf";
       version = "1.11.0";
       owner = "l1xnan";

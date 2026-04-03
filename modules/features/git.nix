@@ -24,8 +24,13 @@
     # Git config in ~/.config/git/config
     programs.git.settings = {
       user.name = "marked01one";
-      user.email = "mnihkhoitran2k3@gmail.com";
+      user.email = "minhkhoitran2k3@gmail.com";
       init.defaultBranch = "main";
+
+      # Delta git-config.
+      delta.navigate = true;
+      delta.dark = true;
+      merge.conflictStyle = "zdiff3";
     };
   };
 }

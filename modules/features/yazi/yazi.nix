@@ -81,7 +81,7 @@
         opener = {
           media = [
             {
-              run = "mpv \"$@\"";
+              run = "mpv --hwdec=vaapi \"$@\"";
               orphan = true;
               for = "unix";
             }

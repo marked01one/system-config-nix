@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.mpv = {...}: {
+  flake.homeModules.mpv = {...}: {
     programs.mpv = {
       enable = true;
     };

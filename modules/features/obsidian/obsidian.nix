@@ -48,7 +48,7 @@
     # Obsidian themes declarations.
     themes = {
       tokyonight = {
-        pkg = local-pkgs.obsidian-theme.tokyo-night;
+        pkg = local-pkgs.obsidian-theme-tokyo-night;
         enable = true;
       };
     };

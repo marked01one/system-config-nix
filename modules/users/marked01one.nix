@@ -27,6 +27,7 @@
       yazi
       yt-dlp
       teams-for-linux
+      obsidian
     ];
   };
 

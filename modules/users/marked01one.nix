@@ -9,7 +9,7 @@
   imports = [inputs.home-manager.flakeModules.home-manager];
 
   # NixOS Module for `username: marked01one`
-  flake.nixosModules.marked01one = {...}: {
+  flake.nixosModules.users__marked01one = {...}: {
     # NixOS-side user declaration.
     users.users.marked01one = {
       enable = true;

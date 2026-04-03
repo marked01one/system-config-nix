@@ -18,11 +18,12 @@
   flake.nixosModules.carbon = {...}: {
     imports = with self.nixosModules; [
       # Users
-      marked01one
+      users__marked01one
 
       home-manager # Home Manager
       limine # bootloader
       gnome # window manager
+      niri
       zsh # shell
       nix-tools # Nix tools
       fonts # Font configs

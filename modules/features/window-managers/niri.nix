@@ -8,10 +8,14 @@
 # + https://niri-wm.github.io/niri/Configuration%3A-Introduction.html
 # + https://github.com/sodiboo/niri-flake/blob/main/docs.md
 #
-{...}: let
+{
+  self,
+  inputs,
+  ...
+}: let
   # Create Niri keybinds by generating all possible prefix-suffix combinations
   # based on inputted suffixes and prefixes.
-  # SAMPLE CODE: https://github.com/sodiboo/system/personal/niri.mod.nix#L31
+  # CODE: https://github.com/sodiboo/system/blob/main/personal/niri.mod.nix#L31
   niri-binds = {
     suffixes,
     prefixes,
@@ -59,19 +63,28 @@
       (prefix: pairs suffixes (suffix: [(format prefix suffix)]))
     );
 in {
-  # Core module for Niri
-  flake.homeModules.niri = {
+  # Core NixOS Module for Niri.
+  flake.nixosModules.niri = {
     config,
     pkgs,
-    inputs,
     lib,
     ...
   }: {
-    imports = [inputs.niri.homeModules.niri];
-    nixpkgs.overlays = [inputs.niri.overlays.niri];
+    imports = [
+      inputs.niri.nixosModules.niri
+      {
+        options.programs.niri.settings = lib.mkOption {
+          type = inputs.niri.lib.settings.make-type {
+            inherit lib pkgs;
+            modules = [{_module.filename = "base-config.kdl";}];
+          };
+          default = {};
+        };
+      }
+    ];
 
     # Declaring addition packages to compliment niri.
-    home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       wl-clipboard
       wayland-utils
       gamescope
@@ -81,12 +94,26 @@ in {
       brightnessctl # Read and control device brightness.
     ];
 
-    # Enabling Niri.
-    programs.niri = {
-      enable = true;
-      package = pkgs.niri-unstable;
-    };
+    # Enable Niri.
+    programs.niri.enable = true;
 
+    # Use the unstable branch of Niri.
+    nixpkgs.overlays = [inputs.niri.overlays.niri];
+    programs.niri.package = pkgs.niri-unstable;
+
+    # Importing config files.
+    home-manager.users.marked01one.imports = [
+      self.homeModules.niri
+      self.homeModules."niri-${config.networking.hostName}"
+    ];
+  };
+
+  # Core Home Manager module for Niri
+  flake.homeModules.niri = {
+    config,
+    lib,
+    ...
+  }: {
     # Universal Niri settings for all hardware.
     # Check below for machine-specific configurations.
     programs.niri.settings = let

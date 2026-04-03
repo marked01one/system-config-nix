@@ -35,6 +35,7 @@
       git
       firefox
       tailscale
+      steam
     ];
 
     # Networking configs.

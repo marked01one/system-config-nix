@@ -53,8 +53,6 @@
       };
     };
   in {
-    # Obsidian is classified as an `unfree` package.
-    nixpkgs.config.allowUnfree = true;
     # General settings for Obsidian.
     programs.obsidian.enable = true;
     programs.obsidian.package = pkgs.obsidian;

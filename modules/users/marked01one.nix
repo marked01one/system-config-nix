@@ -27,13 +27,14 @@
       default-apps
 
       # feature modules
-      yt-dlp
-      wezterm
       anydesk
+      mpv
       scripts
-      yazi
       stylix
       vesktop
+      wezterm
+      yazi
+      yt-dlp
     ];
   };
 

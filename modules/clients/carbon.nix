@@ -6,6 +6,11 @@
   inputs,
   ...
 }: {
+  # Import Home Manager input.
+  # We're using importing rules specific to `flake-parts`.
+  # https://flake.parts/options/home-manager.html
+  imports = [inputs.home-manager.flakeModules.home-manager];
+
   # NixOS system configuration.
   flake.nixosConfigurations.carbon = inputs.nixpkgs.lib.nixosSystem {
     modules = [
@@ -18,7 +23,7 @@
   flake.nixosModules.carbon = {...}: {
     imports = with self.nixosModules; [
       # Users
-      users__marked01one
+      marked01one
 
       home-manager # Home Manager
       limine # bootloader

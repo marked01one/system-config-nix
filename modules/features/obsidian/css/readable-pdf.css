@@ -1,0 +1,6 @@
+@media print {
+  body {
+    max-width: 800px; /* Adjust as needed for desired line length */
+    margin: 0 auto; /* Center the content */
+  }
+}

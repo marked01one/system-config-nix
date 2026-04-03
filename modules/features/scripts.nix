@@ -6,6 +6,7 @@ in {
     environment.systemPackages = with local-pkgs; [
       fcp
       eza-grep
+      flake-parts-init
     ];
   };
 
@@ -21,6 +22,7 @@ in {
       [
         fcp
         eza-grep
+        flake-parts-init
       ]
       ++ (
         # Only include the following packages if Stylix is enabled AND defined.

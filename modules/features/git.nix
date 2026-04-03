@@ -25,6 +25,7 @@
     programs.git.settings = {
       user.name = "marked01one";
       user.email = "mnihkhoitran2k3@gmail.com";
+      init.defaultBranch = "main";
     };
   };
 }

@@ -1,15 +1,6 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  # Import Home Manager input.
-  # We're using importing rules specific to `flake-parts`.
-  # https://flake.parts/options/home-manager.html
-  imports = [inputs.home-manager.flakeModules.home-manager];
-
+{self, ...}: {
   # NixOS Module for `username: marked01one`
-  flake.nixosModules.users__marked01one = {...}: {
+  flake.nixosModules.marked01one = {...}: {
     # NixOS-side user declaration.
     users.users.marked01one = {
       enable = true;
@@ -35,6 +26,7 @@
       wezterm
       yazi
       yt-dlp
+      teams-for-linux
     ];
   };
 

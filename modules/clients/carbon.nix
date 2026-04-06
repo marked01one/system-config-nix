@@ -34,6 +34,7 @@
       fonts # Font configs
       fingerprint # Fingerprint support
       laptop # Power configs for laptop
+      nix-ld # Enable NixOS to run dynamically-linked executables.
 
       # Core apps
       vscode

@@ -41,6 +41,7 @@
       firefox
       tailscale
       steam
+      unityhub
     ];
 
     # Networking configs.

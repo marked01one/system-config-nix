@@ -42,6 +42,7 @@
       tailscale
       steam
       unityhub
+      dotnet-sdk
     ];
 
     # Networking configs.

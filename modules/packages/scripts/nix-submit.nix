@@ -5,7 +5,7 @@
       runtimeInputs = with pkgs; [git neovim alejandra];
       text = ''
         # syntax: shell
-        pushd "~/.nixos"
+        pushd "$HOME/.nixos"
         echo "Flake directory: $(pwd)"
         git diff
         echo "Running 'nixos-rebuild switch' ..."

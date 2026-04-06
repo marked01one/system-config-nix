@@ -7,6 +7,7 @@ in {
       fcp
       eza-grep
       flake-parts-init
+      nix-submit
     ];
   };
 
@@ -23,6 +24,7 @@ in {
         fcp
         eza-grep
         flake-parts-init
+        nix-submit
       ]
       ++ (
         # Only include the following packages if Stylix is enabled AND defined.

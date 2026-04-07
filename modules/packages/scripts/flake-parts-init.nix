@@ -67,6 +67,7 @@
   in {
     packages.flake-parts-init = pkgs.writeShellApplication {
       name = "flake-parts-init";
+      runtimeInputs = with pkgs; [neovim];
       text = ''
         # syntax: shell
         function usage {
@@ -94,32 +95,36 @@
         check_module "$NEW_MOD"
 
         read -rp "${greets.preset}" preset
+
         case $preset in
           c|C)
-            MOD_DIR="$(pwd)/modules/clients"
-            mkdir -p "$MOD_DIR"
-            sed "s/FILENAME/$NEW_MOD/g" ${templates.clients} > "$MOD_DIR/$NEW_MOD.nix"
+            mkdir -p "$(pwd)/modules/clients"
+            pushd "$(pwd)/modules/clients"
+            sed "s/FILENAME/$NEW_MOD/g" ${templates.clients} > "$NEW_MOD.nix"
             ;;
           f|F)
-            MOD_DIR="$(pwd)/modules/features"
-            mkdir -p "$MOD_DIR"
-            sed "s/FILENAME/$NEW_MOD/g" ${templates.features} > "$MOD_DIR/$NEW_MOD.nix"
+            mkdir -p "$(pwd)/modules/features"
+            pushd "$(pwd)/modules/features"
+            sed "s/FILENAME/$NEW_MOD/g" ${templates.features} > "$NEW_MOD.nix"
             ;;
           n|N)
-            MOD_DIR="$(pwd)/modules/nixos"
-            mkdir -p "$MOD_DIR"
-            sed "s/FILENAME/$NEW_MOD/g" ${templates.nixos} > "$MOD_DIR/$NEW_MOD.nix"
+            mkdir -p "$(pwd)/modules/nixos"
+            pushd "$(pwd)/modules/nixos"
+            sed "s/FILENAME/$NEW_MOD/g" ${templates.nixos} > "$NEW_MOD.nix"
             ;;
           s|S)
-            MOD_DIR="$(pwd)/modules/packages/scripts"
-            mkdir -p "$MOD_DIR"
-            sed "s/FILENAME/$NEW_MOD/g" ${templates.scripts} > "$MOD_DIR/$NEW_MOD.nix"
+            mkdir -p "$(pwd)/modules/packages/scripts"
+            pushd "$(pwd)/modules/packages/scripts"
+            sed "s/FILENAME/$NEW_MOD/g" ${templates.scripts} > "$NEW_MOD.nix"
             ;;
           *)
             echo "Invalid input! Exiting..."
             exit 1
             ;;
         esac
+
+        nvim "$NEW_MOD.nix"
+        popd
       '';
     };
   };

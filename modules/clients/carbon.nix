@@ -44,6 +44,7 @@
       steam
       unityhub
       dotnet-sdk
+      btop
     ];
 
     # Networking configs.

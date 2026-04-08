@@ -28,6 +28,7 @@
       yt-dlp
       teams-for-linux
       obsidian
+      ltspice
     ];
   };
 

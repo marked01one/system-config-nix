@@ -36,6 +36,10 @@
       laptop # Power configs for laptop
       nix-ld # Enable NixOS to run dynamically-linked executables.
 
+      # Programming languages
+      python
+      dotnet-sdk
+
       # Core apps
       vscode
       git
@@ -43,7 +47,6 @@
       tailscale
       steam
       unityhub
-      dotnet-sdk
       btop
     ];
 

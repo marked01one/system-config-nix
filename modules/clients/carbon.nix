@@ -48,6 +48,7 @@
       steam
       unityhub
       btop
+      globalprotect
     ];
 
     # Networking configs.

@@ -18,18 +18,18 @@
       default-apps
 
       # feature modules
+      ani-cli
       anydesk
+      ltspice
       mpv
+      obsidian
       scripts
       stylix
+      teams-for-linux
       vesktop
       wezterm
       yazi
       yt-dlp
-      teams-for-linux
-      obsidian
-      ltspice
-      ani-cli
     ];
   };
 

@@ -29,6 +29,7 @@
       teams-for-linux
       obsidian
       ltspice
+      ani-cli
     ];
   };
 

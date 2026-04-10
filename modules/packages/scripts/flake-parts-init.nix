@@ -67,7 +67,7 @@
   in {
     packages.flake-parts-init = pkgs.writeShellApplication {
       name = "flake-parts-init";
-      runtimeInputs = with pkgs; [neovim];
+      runtimeInputs = with pkgs; [neovim alejandra];
       text = ''
         # syntax: shell
         function usage {
@@ -99,22 +99,22 @@
         case $preset in
           c|C)
             mkdir -p "$(pwd)/modules/clients"
-            pushd "$(pwd)/modules/clients"
+            pushd "$(pwd)/modules/clients" > "/dev/null"
             sed "s/FILENAME/$NEW_MOD/g" ${templates.clients} > "$NEW_MOD.nix"
             ;;
           f|F)
             mkdir -p "$(pwd)/modules/features"
-            pushd "$(pwd)/modules/features"
+            pushd "$(pwd)/modules/features" > "/dev/null"
             sed "s/FILENAME/$NEW_MOD/g" ${templates.features} > "$NEW_MOD.nix"
             ;;
           n|N)
             mkdir -p "$(pwd)/modules/nixos"
-            pushd "$(pwd)/modules/nixos"
+            pushd "$(pwd)/modules/nixos" > "/dev/null"
             sed "s/FILENAME/$NEW_MOD/g" ${templates.nixos} > "$NEW_MOD.nix"
             ;;
           s|S)
             mkdir -p "$(pwd)/modules/packages/scripts"
-            pushd "$(pwd)/modules/packages/scripts"
+            pushd "$(pwd)/modules/packages/scripts" > "/dev/null"
             sed "s/FILENAME/$NEW_MOD/g" ${templates.scripts} > "$NEW_MOD.nix"
             ;;
           *)
@@ -124,7 +124,9 @@
         esac
 
         nvim "$NEW_MOD.nix"
-        popd
+        alejandra "$NEW_MOD.nix"
+
+        popd > "/dev/null"
       '';
     };
   };

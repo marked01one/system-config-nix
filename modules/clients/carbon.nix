@@ -49,6 +49,7 @@
       unityhub
       btop
       globalprotect
+      rustdesk
     ];
 
     # Networking configs.

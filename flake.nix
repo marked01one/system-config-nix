@@ -46,6 +46,9 @@
 
     ############################### Utilities ##############################
 
+    # GlobalProtect VPN
+    globalprotect-openconnect.url = "github:yuezk/GlobalProtect-openconnect";
+
     # Niri window manager.
     niri = {
       url = "github:sodiboo/niri-flake";

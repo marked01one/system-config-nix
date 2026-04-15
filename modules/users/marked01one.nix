@@ -29,6 +29,7 @@
       vesktop
       wezterm
       yazi
+      youtube-tui
       yt-dlp
     ];
   };

@@ -44,7 +44,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
-    ############################### Utilities ##############################
+    ############################### Utilities ##################################
 
     # GlobalProtect VPN
     globalprotect-openconnect.url = "github:yuezk/GlobalProtect-openconnect";
@@ -67,6 +67,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    # YouTube TUI
+    youtube-tui.url = "github:Siriusmart/youtube-tui";
   };
 
   outputs = {...} @ inputs:

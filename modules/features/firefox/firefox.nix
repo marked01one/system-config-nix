@@ -79,6 +79,12 @@
         id = 0;
         # Firefox browser settings in `about:config`
         settings = {
+          # Enable protocol handler for GlobalConnect.
+          "network.protocol-handler.expose.globalprotectcallback" = false;
+          "network.protocol-handler.external.globalprotectcallback" = true;
+          "network.protocol-handler.warn-external.globalprotectcallback" = false;
+
+          # Disable transparent browser
           "browser.tabs.allow_transparent_browser" = false;
 
           # AI blocking settings

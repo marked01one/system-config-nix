@@ -9,6 +9,13 @@
       ]);
   };
 
-  flake.homeModules.globalprotect = {...}: {
+  flake.homeModules.globalprotect = {pkgs, ...}: {
+    home.packages =
+      (with inputs.globalprotect-openconnect; [
+        packages.${pkgs.stdenv.hostPlatform.system}.default
+      ])
+      ++ (with pkgs; [
+        openconnect
+      ]);
   };
 }

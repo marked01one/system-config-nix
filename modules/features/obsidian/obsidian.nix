@@ -43,6 +43,12 @@
         enable = true;
         settings = {};
       };
+
+      relative-line-numbers = {
+        pkg = local-pkgs.obsidian-relative-line-numbers;
+        enable = true;
+        settings = {};
+      };
     };
 
     # Obsidian themes declarations.
@@ -118,6 +124,7 @@
               dataview
               calendar
               better-export-pdf
+              relative-line-numbers
             ];
 
             themes = with themes; [

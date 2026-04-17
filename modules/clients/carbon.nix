@@ -35,6 +35,7 @@
       fingerprint # Fingerprint support
       laptop # Power configs for laptop
       nix-ld # Enable NixOS to run dynamically-linked executables.
+      neovim
 
       # Programming languages
       python

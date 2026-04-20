@@ -54,8 +54,7 @@
 
     # Configure keymap in X11
     services.xserver.xkb.layout = "us";
-      services.xserver.xkb.variant = "";
-      
+    services.xserver.xkb.variant = "";
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.marked01one = {
@@ -89,9 +88,9 @@
     system.stateVersion = "25.11";
 
     nix = {
-      settings = { 
-  	allowed-users = ["marked01one"];
-	experimental-features = ["nix-command" "flakes"];
+      settings = {
+        allowed-users = ["marked01one"];
+        experimental-features = ["nix-command" "flakes"];
       };
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     };

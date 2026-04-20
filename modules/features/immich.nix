@@ -8,6 +8,5 @@
 
       machine-learning.enable = true;
     };
-
   };
 }

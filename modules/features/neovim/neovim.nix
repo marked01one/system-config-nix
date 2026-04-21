@@ -13,8 +13,6 @@
 
   flake.homeModules.neovim = {...}: {
     programs.neovim = {
-      enable = true;
-
       withRuby = true;
       withPython3 = true;
       withNodeJs = true;

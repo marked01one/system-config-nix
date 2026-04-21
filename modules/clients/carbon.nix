@@ -100,6 +100,8 @@
       buildMachines = [
         {
           hostName = "hydrogen";
+          sshKey = "/root/.ssh/nixremote";
+          sshUser = "marked01one";
           system = "x86_64-linux";
           protocol = "ssh-ng";
           maxJobs = 8;

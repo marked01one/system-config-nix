@@ -93,8 +93,21 @@
       settings = {
         allowed-users = ["marked01one"];
         experimental-features = ["nix-command" "flakes"];
+        builders-use-substitutes = true;
       };
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+      distributedBuilds = true;
+      buildMachines = [
+        {
+          hostName = "hydrogen";
+          system = "x86_64-linux";
+          protocol = "ssh-ng";
+          maxJobs = 8;
+          speedFactor = 2;
+          supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
+          mandatoryFeatures = [];
+        }
+      ];
     };
   };
 

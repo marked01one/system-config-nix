@@ -19,6 +19,8 @@
   }: {
     imports = with self.nixosModules; [
       immich
+      scripts
+      nix-tools
     ];
 
     # Bootloader.
@@ -95,6 +97,7 @@
       settings = {
         allowed-users = ["marked01one"];
         experimental-features = ["nix-command" "flakes"];
+        trusted-users = ["root" "marked01one"];
       };
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     };

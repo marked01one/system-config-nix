@@ -21,6 +21,8 @@
       immich
       scripts
       nix-tools
+      zsh
+      neovim
     ];
 
     # Bootloader.

@@ -23,6 +23,7 @@
       nix-tools
       zsh
       neovim
+      ollama
     ];
 
     # Bootloader.

@@ -6,9 +6,9 @@
       neovim
     ];
 
-    home-manager.users.${defaultUser}.imports = [
-      self.homeModules.neovim
-    ];
+    # home-manager.users.${defaultUser}.imports = [
+    #   self.homeModules.neovim
+    # ];
   };
 
   flake.homeModules.neovim = {...}: {

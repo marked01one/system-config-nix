@@ -46,8 +46,8 @@
         fi
       '';
 
-      # Importing `zsh` Home Manager configs.
-      home-manager.users.${usernameConfig}.imports = [self.homeModules.zsh];
+      # home-manager.users.${defaultUser}.imports = [self.homeModules.zsh];
+
     };
   };
 

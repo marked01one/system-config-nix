@@ -1,4 +1,4 @@
-{...}: {
+{self, ...}: {
   flake.nixosModules.marked01one-admin = {...}: {
     users.users."marked01one.admin" = {
       enable = true;
@@ -8,10 +8,14 @@
     };
 
     # Home Manager module imports.
-    # home-manager.users."marked01one.admin".imports = with self.homeModules; [
-    #   # Core user home module.
-    #   marked01one-admin
-    # ];
+    home-manager.users."marked01one.admin".imports = with self.homeModules; [
+      # Core user home module.
+      marked01one-admin
+
+      neovim
+      stylix
+      zsh
+    ];
   };
 
   flake.homeModules.marked01one-admin = {...}: let

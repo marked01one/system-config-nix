@@ -45,9 +45,6 @@
           fastfetch --kitty-direct ${./assets/tumblr-luminousslime-002.jpg}
         fi
       '';
-
-      # home-manager.users.${defaultUser}.imports = [self.homeModules.zsh];
-
     };
   };
 

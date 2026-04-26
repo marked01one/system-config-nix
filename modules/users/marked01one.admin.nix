@@ -1,5 +1,5 @@
-{self, ...}: {
-  flake.nixosModules."marked01one.admin" = {...}: {
+{...}: {
+  flake.nixosModules.marked01one-admin = {...}: {
     users.users."marked01one.admin" = {
       enable = true;
       isNormalUser = true;
@@ -8,13 +8,13 @@
     };
 
     # Home Manager module imports.
-    home-manager.users."marked01one.admin".imports = with self.homeModules; [
-      # Core user home module.
-      marked01one.admin
-    ];
+    # home-manager.users."marked01one.admin".imports = with self.homeModules; [
+    #   # Core user home module.
+    #   marked01one-admin
+    # ];
   };
 
-  flake.homeModules."marked01one.admin" = {...}: let
+  flake.homeModules.marked01one-admin = {...}: let
     username = "marked01one.admin";
   in {
     # Username for the user of this home manager.

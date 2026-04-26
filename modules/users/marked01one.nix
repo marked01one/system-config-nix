@@ -22,6 +22,7 @@
       anydesk
       ltspice
       mpv
+      neovim
       obsidian
       scripts
       stylix
@@ -31,6 +32,7 @@
       yazi
       youtube-tui
       yt-dlp
+      zsh
     ];
   };
 

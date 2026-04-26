@@ -20,6 +20,7 @@
       # feature modules
       ani-cli
       anydesk
+      btop
       ltspice
       mpv
       neovim

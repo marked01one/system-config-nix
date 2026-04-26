@@ -27,6 +27,8 @@
           fonts.enable = false;
         };
 
+        btop.enable = true;
+
         # Disable fontconfig inheritance of Stylix default fonts.
         fontconfig.enable = true;
         fontconfig.fonts.enable = false;

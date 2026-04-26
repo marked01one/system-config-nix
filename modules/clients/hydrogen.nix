@@ -21,6 +21,8 @@
       # Users
       marked01one-admin
 
+      home-manager # Home Manager
+
       immich
       scripts
       nix-tools

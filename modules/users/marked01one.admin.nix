@@ -11,6 +11,10 @@
     home-manager.users."marked01one.admin".imports = with self.homeModules; [
       # Core user home module.
       marked01one-admin
+
+      neovim
+      stylix
+      zsh
     ];
   };
 

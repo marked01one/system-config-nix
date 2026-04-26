@@ -103,9 +103,9 @@
 
     nix = {
       settings = {
-        allowed-users = ["marked01one"];
+        allowed-users = ["marked01one" "marked01one.admin"];
         experimental-features = ["nix-command" "flakes"];
-        trusted-users = ["root" "marked01one"];
+        trusted-users = ["root" "marked01one" "marked01one.admin"];
       };
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     };

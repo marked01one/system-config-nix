@@ -3,7 +3,7 @@
     users.users."marked01one.admin" = {
       enable = true;
       isNormalUser = true;
-      description = "marke01one.admin";
+      description = "marked01one.admin";
       extraGroups = ["networkmanager" "wheel"];
     };
 

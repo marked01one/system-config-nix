@@ -1,14 +1,6 @@
-{self, ...}: {
-  flake.nixosModules.neovim = {pkgs, ...}: let
-    defaultUser = "marked01one";
-  in {
-    environment.systemPackages = with pkgs; [
-      neovim
-    ];
-
-    # home-manager.users.${defaultUser}.imports = [
-    #   self.homeModules.neovim
-    # ];
+{...}: {
+  flake.nixosModules.neovim = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [neovim];
   };
 
   flake.homeModules.neovim = {...}: {

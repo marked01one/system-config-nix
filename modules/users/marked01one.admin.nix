@@ -13,7 +13,6 @@
       marked01one-admin
 
       neovim
-      stylix
       zsh
     ];
   };

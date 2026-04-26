@@ -18,6 +18,9 @@
     ...
   }: {
     imports = with self.nixosModules; [
+	# Users
+	marked01one-admin
+
       immich
       scripts
       nix-tools

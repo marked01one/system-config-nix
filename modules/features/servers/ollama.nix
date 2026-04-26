@@ -9,6 +9,7 @@
       ];
       # Remove any models not declared in `loadModels`
       syncModels = true;
+      openFirewall = true;
     };
   };
 }

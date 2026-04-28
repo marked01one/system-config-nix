@@ -24,7 +24,6 @@
     imports = with self.nixosModules; [
       # Users
       marked01one
-      marked01one-admin
 
       home-manager # Home Manager
       limine # bootloader

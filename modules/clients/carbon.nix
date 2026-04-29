@@ -40,6 +40,8 @@
       # Programming languages
       python
       dotnet-sdk
+      java
+      mysql
 
       # Core apps
       vscode

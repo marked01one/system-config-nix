@@ -23,12 +23,16 @@
 
       home-manager # Home Manager
 
+      # Programming languages
+      python
+
       immich
       scripts
       nix-tools
       zsh
       neovim
       ollama
+      btop
     ];
 
     # Bootloader.

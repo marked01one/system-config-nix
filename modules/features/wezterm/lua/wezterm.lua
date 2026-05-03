@@ -26,7 +26,7 @@ config.window_padding = {
 }
 
 -- Fonts
-config.font_size = 12
+config.font_size = 10
 config.font = wezterm.font_with_fallback {
   -- 1. Primary font for alpha-numeric characters & common symbols.
   {

@@ -24,7 +24,6 @@
     imports = with self.nixosModules; [
       # Users
       marked01one
-      marked01one-admin
 
       home-manager # Home Manager
       limine # bootloader
@@ -36,11 +35,14 @@
       fingerprint # Fingerprint support
       laptop # Power configs for laptop
       nix-ld # Enable NixOS to run dynamically-linked executables.
+      backlight
       neovim
 
       # Programming languages
       python
       dotnet-sdk
+      java
+      mysql
 
       # Core apps
       vscode

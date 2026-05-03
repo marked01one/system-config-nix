@@ -22,6 +22,7 @@
       marked01one-admin
 
       home-manager # Home Manager
+      nix-ld
 
       # Programming languages
       python

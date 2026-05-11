@@ -43,6 +43,7 @@
       dotnet-sdk
       java
       mysql
+      thokr
 
       # Core apps
       vscode
@@ -55,6 +56,7 @@
       globalprotect
       remmina
       rustdesk
+      zoom-us
     ];
 
     # Networking configs.

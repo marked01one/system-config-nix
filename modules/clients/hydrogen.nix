@@ -22,6 +22,10 @@
       marked01one-admin
 
       home-manager # Home Manager
+      nix-ld
+
+      # Programming languages
+      python
 
       immich
       scripts
@@ -29,6 +33,7 @@
       zsh
       neovim
       ollama
+      btop
     ];
 
     # Bootloader.

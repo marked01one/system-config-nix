@@ -6,6 +6,7 @@
         "gemma3:270m"
         "gemma3:1b"
         "qwen2.5:0.5b"
+        "qwen3-embedding:8b"
         "gpt-oss:20b"
       ];
       # Remove any models not declared in `loadModels`

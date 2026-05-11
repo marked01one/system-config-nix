@@ -44,6 +44,7 @@
       java
       mysql
       thokr
+      cargo
 
       # Core apps
       vscode

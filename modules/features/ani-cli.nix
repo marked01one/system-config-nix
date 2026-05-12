@@ -19,11 +19,11 @@ in {
   }: {
     packages.ani-cli = pkgs.stdenvNoCC.mkDerivation (finalAttrs: {
       pname = "ani-cli";
-      version = "4.12";
+      version = "4.14";
 
       src = pkgs.fetchurl {
         url = "https://github.com/pystardust/ani-cli/archive/refs/tags/v${finalAttrs.version}.tar.gz";
-        sha256 = "sha256-okeHi4qV01xexvKKvgWUuzqsKdvRhhUxr0orkJtrS+0=";
+        sha256 = "sha256-vkDHeWBbm160wJ5jofRgvMadc6OrbnByeVSPuFE8lsA=";
       };
 
       nativeBuildInputs = [pkgs.makeWrapper];

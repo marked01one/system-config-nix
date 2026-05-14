@@ -7,8 +7,9 @@
     ];
 
     environment.sessionVariables = {
-      LIBTORCH_LIB = "${pkgs.libtorch-bin}";
-      LIBTORCH_INCLUDE = "${pkgs.libtorch-bin.dev}";
+      LIBTORCH = "${pkgs.libtorch-bin}/";
+      LIBTORCH_LIB = "${pkgs.libtorch-bin}/";
+      LIBTORCH_INCLUDE = "${pkgs.libtorch-bin.dev}/";
     };
   };
 

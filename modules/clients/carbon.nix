@@ -58,6 +58,7 @@
       remmina
       rustdesk
       zoom-us
+      qbittorrent
     ];
 
     # Networking configs.

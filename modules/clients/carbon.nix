@@ -59,6 +59,7 @@
       rustdesk
       zoom-us
       qbittorrent
+      obs-studio
     ];
 
     # Networking configs.

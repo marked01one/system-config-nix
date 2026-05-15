@@ -26,6 +26,7 @@
 
       # Programming languages
       python
+      cargo
 
       immich
       scripts

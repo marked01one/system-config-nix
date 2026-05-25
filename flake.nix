@@ -70,6 +70,9 @@
 
     # YouTube TUI
     youtube-tui.url = "github:Siriusmart/youtube-tui";
+
+    # Run Minecraft servers declaratively on NixOS.
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs = {...} @ inputs:

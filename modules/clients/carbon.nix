@@ -60,6 +60,8 @@
       zoom-us
       qbittorrent
       obs-studio
+
+      prism-launcher
     ];
 
     # Networking configs.

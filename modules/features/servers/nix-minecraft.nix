@@ -13,10 +13,12 @@
           package = pkgs.vanillaServers.vanilla-26_1_2;
 
           serverProperties = {
+            motd = "Khoi's Vanilla Server";
             gamemode = "survival";
             difficulty = "normal";
             simulation-distance = 8;
             server-port = 25566;
+            white-list = true;
           };
 
           jvmOpts = "-Xms4G -Xmx4G";

@@ -28,13 +28,17 @@
       python
       cargo
 
-      immich
+      # CLI tools
       scripts
       nix-tools
       zsh
+      btop
+
+      # Servers
+      immich
       neovim
       ollama
-      btop
+      nix-minecraft
     ];
 
     # Bootloader.

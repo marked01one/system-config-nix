@@ -32,4 +32,5 @@
       },
     }
   },
+  "nixEnvSelector.suggestion": false,
 }

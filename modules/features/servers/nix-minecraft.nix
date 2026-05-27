@@ -36,7 +36,7 @@
         };
       };
 
-      services.gcs-modded = {
+      servers.gcs-modded = {
         enable = true;
         package = pkgs.neoforgeServers.neoforge-1_21_1;
         openFirewall = true;

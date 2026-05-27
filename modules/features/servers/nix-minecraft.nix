@@ -21,7 +21,7 @@
           gamemode = "survival";
           difficulty = "normal";
           simulation-distance = 8;
-          server-port = 25565;
+          server-port = 25566;
           white-list = true;
           enforce-secure-profile = false;
           view-distance = 32;
@@ -52,7 +52,7 @@
           gamemode = "survival";
           difficulty = "normal";
           simulation-distance = 8;
-          server-port = 25566;
+          server-port = 25565;
           white-list = true;
           enforce-secure-profile = false;
           view-distance = 32;
@@ -63,16 +63,40 @@
         symlinks = {
           "mods" = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
             # Performance mods.
-            FerriteCore = pkgs.fetchurl {url = "https://cdn.modrinth.com/data/uXXizFIs/versions/x7kQWVju/ferritecore-7.0.3-neoforge.jar";};
-            Krypton = pkgs.fetchurl {url = "https://cdn.modrinth.com/data/JkxWVYwU/versions/SUeOFygw/krypton_fnp-neoforge-1.21.1-0.2.28.1-1.21.1.jar";};
-            LazyDFU = pkgs.fetchurl {url = "https://cdn.modrinth.com/data/OmQzuQFa/versions/WHSBfR8W/LazyDFU-%5BUNOFFICIAL%5D%2B1.21.jar";};
-            Noisium = pkgs.fetchurl {url = "https://cdn.modrinth.com/data/hasdd01q/versions/VviuomrA/noisium-neoforge-2.7.0%2Bmc1.21-1.21.1.jar";};
-            ScalableLux = pkgs.fetchurl {url = "https://cdn.modrinth.com/data/Ps1zyz6x/versions/j10HNoNf/ScalableLux-0.1.0.1%2Bneoforge.1cb1e91-all.jar";};
-            Chunky = pkgs.fetchurl {url = "https://cdn.modrinth.com/data/fALzjamp/versions/LuFhm4eU/Chunky-NeoForge-1.4.23.jar";};
-            C2ME = pkgs.fetchurl {url = "https://cdn.modrinth.com/data/COlSi5iR/versions/KmfiVd28/c2me-neoforge-mc1.21.1-0.3.0%2Balpha.0.93.jar";};
+            FerriteCore = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/uXXizFIs/versions/x7kQWVju/ferritecore-7.0.3-neoforge.jar";
+              sha256 = "sha256-2H6igmJxXr/0W4qC1JPmtGjnpFIbwCHfXYgwIZbQMKg=";
+            };
+            Krypton = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/JkxWVYwU/versions/SUeOFygw/krypton_fnp-neoforge-1.21.1-0.2.28.1-1.21.1.jar";
+              sha256 = "sha256-BevoSWEdqv5TP8V+2bUVbt+pFXztBNOKeGCx4gdZhLk=";
+            };
+            LazyDFU = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/OmQzuQFa/versions/WHSBfR8W/LazyDFU-%5BUNOFFICIAL%5D%2B1.21.jar";
+              sha256 = "sha256-11WHHi3I+XFa67988XXXK9loDSXDjzcZTV3+X3CYYkg=";
+            };
+            Noisium = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/hasdd01q/versions/VviuomrA/noisium-neoforge-2.7.0%2Bmc1.21-1.21.1.jar";
+              sha256 = "sha256-ygl81T/Nq+y8vyLiUV6xlW8xPwlM06BQaADr8jniVfk=";
+            };
+            ScalableLux = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/Ps1zyz6x/versions/j10HNoNf/ScalableLux-0.1.0.1%2Bneoforge.1cb1e91-all.jar";
+              sha256 = "sha256-dDQKN6+FgBTs9mBoBUvtOrd4si0klW00ii7CvDxYXLU=";
+            };
+            Chunky = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/fALzjamp/versions/LuFhm4eU/Chunky-NeoForge-1.4.23.jar";
+              sha256 = "sha256-1y8jXPH1byw3T1LAC92lA0UksoFCMFqEz8Ejo/kq0nQ=";
+            };
+            C2ME = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/COlSi5iR/versions/KmfiVd28/c2me-neoforge-mc1.21.1-0.3.0%2Balpha.0.93.jar";
+              sha256 = "sha256-JzWxbhNuUcA8moIR++yvnVcaKEdZgSI8YGYkZWZPUyI=";
+            };
 
             # Terrain generation.
-            Terralith = pkgs.fetchurl {url = "https://cdn.modrinth.com/data/8oi3bsk5/versions/MuJMtPGQ/Terralith_1.21.x_v2.5.8.jar";};
+            Terralith = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/8oi3bsk5/versions/MuJMtPGQ/Terralith_1.21.x_v2.5.8.jar";
+              sha256 = "sha256-ADM6EwrDi3ucqTcACY1eAuBhK9wtNSKq2i825WAGIb8=";
+            };
           });
         };
       };

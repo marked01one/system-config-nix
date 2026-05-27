@@ -33,6 +33,7 @@
       nix-tools
       zsh
       btop
+      compose2nix
 
       # Servers
       immich

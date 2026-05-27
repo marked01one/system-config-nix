@@ -56,6 +56,8 @@
           white-list = true;
           enforce-secure-profile = false;
           view-distance = 32;
+          level-name = "New World";
+          level-seed = "67";
         };
 
         jvmOpts = "-Xms4G -Xmx4G";

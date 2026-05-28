@@ -33,8 +33,8 @@
           white-list = true;
           enforce-secure-profile = false;
           view-distance = 32;
-          level-name = "Very New World";
-          level-seed = "42067";
+          level-name = "A Bigger World";
+          level-seed = "67";
 
           # Remote console.
           enable-rcon = true;
@@ -155,6 +155,12 @@
             SupplementariesSquared = pkgs.fetchurl {
               url = "https://cdn.modrinth.com/data/dCCkNFwE/versions/6LgMCeqW/suppsquared-1.21-1.2.17-neoforge.jar";
               sha256 = "sha256-SRIKLO3/WlG5JX7kTHKp04BY6hP+mNP8uerSwu313Uk=";
+            };
+
+            # Create (with Addons).
+            Create = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/LNytGWDc/versions/UjX6dr61/create-1.21.1-6.0.10.jar";
+              sha256 = "sha256-74f+Vwnxuh9bi7IKKSW1r7RmnheP1ti/EMFndZ7v43o=";
             };
 
             # Dependencies

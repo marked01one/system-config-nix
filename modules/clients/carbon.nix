@@ -46,21 +46,21 @@
       cargo
 
       # Core apps
-      vscode
-      git
-      firefox
-      tailscale
-      steam
-      unityhub
       btop
+      firefox
+      git
       globalprotect
+      helium-browser
+      obs-studio
+      prism-launcher
+      qbittorrent
       remmina
       rustdesk
+      steam
+      tailscale
+      unityhub
+      vscode
       zoom-us
-      qbittorrent
-      obs-studio
-
-      prism-launcher
     ];
 
     # Networking configs.

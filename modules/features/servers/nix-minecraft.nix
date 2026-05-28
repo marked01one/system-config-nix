@@ -178,6 +178,10 @@
               url = "https://cdn.modrinth.com/data/twkfQtEc/versions/er7S98Q1/moonlight-neoforge-1.21.1-3.0.14.jar";
               sha256 = "sha256-fsJX7c4dR4PTpRQ/PyN90GDTFAot/PRlIqUFIREHKs0=";
             };
+            GeckoLib = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/8BmcQJ2H/versions/gFmrC8Ru/geckolib-neoforge-1.21.1-4.8.4.jar";
+              sha256 = "sha256-obbOJehieqfnSGcu7ba3GvaOCZNGIxNknCWfOOQrysk=";
+            };
           });
         };
       };

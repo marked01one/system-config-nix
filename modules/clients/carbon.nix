@@ -42,7 +42,6 @@
       python
       dotnet-sdk
       java
-      mysql
       thokr
       cargo
 

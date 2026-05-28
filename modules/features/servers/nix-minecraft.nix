@@ -124,6 +124,38 @@
               url = "https://cdn.modrinth.com/data/HQsBdHGd/versions/mCpyMtM9/edf-remastered-5.0.0.jar";
               sha256 = "sha256-t7hPsOdiFD8unXFEsMpkRpDLqw2HSOg0sUz27Y7dQgQ=";
             };
+            FarmersDelight = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/R2OftAxM/versions/GbNuOZ4S/FarmersDelight-1.21.1-1.3.2.jar";
+              sha256 = "sha256-j/Q41i4fzmFUKUX6rkWXXYI+BL1uc6B6Eh6gXOLwPec=";
+            };
+            NethersDelight = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/O53VhQoZ/versions/qBUSJw5Z/MyNethersDelight-1.21.1-1.10.2.jar";
+              sha256 = "sha256-ACZ48Vrg5hgF07vQvIx9f2g9Y+arR5/4+yUYUUE0xMI=";
+            };
+            ChefsDelight = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/pvcsfne4/versions/csBO1q5h/chefsdelight-1.0.5-neoforge-1.21.1.jar";
+              sha256 = "sha256-n9eSCkzO0ARDwQfBrAUAKzVUNzTHbgXvHR6/XxfOmcg=";
+            };
+
+            # Mobs.
+            GuardVillagers = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/H1sntfo8/versions/p8QpwGZ2/guardvillagers-2.4.8-1.21.1.jar";
+              sha256 = "sha256-l9uQcKax9U8EkfOxrDP0wOuj5Qrm8fGf3tvf8PCnmKQ=";
+            };
+            Ribbits = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/8YcE8y4T/versions/XrUKaWrw/Ribbits-1.21.1-NeoForge-4.1.6.jar";
+              sha256 = "sha256-eUIj9akbi4CpYnVLUYDsPiRy22lB6bbBzdSTJN9ig4k=";
+            };
+
+            # Decorations.
+            Supplementaries = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/fFEIiSDQ/versions/4XwZg5Dq/supplementaries-neoforge-1.21.1-3.6.5.jar";
+              sha256 = "sha256-yFloUY/4IusxO17IKS9/VNDMm0/gRq5eej5KQPbI52s=";
+            };
+            SupplementariesSquared = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/dCCkNFwE/versions/6LgMCeqW/suppsquared-1.21-1.2.17-neoforge.jar";
+              sha256 = "sha256-SRIKLO3/WlG5JX7kTHKp04BY6hP+mNP8uerSwu313Uk=";
+            };
 
             # Dependencies
             YungsApi = pkgs.fetchurl {
@@ -141,6 +173,10 @@
             WorldWeaver = pkgs.fetchurl {
               url = "https://cdn.modrinth.com/data/R8uGDQpB/versions/IWU5Ih3g/worldweaver-21.0.18.jar";
               sha256 = "sha256-mnW5fM2T3TSEA1JrjySzTlW6+WR3iZRos7q3Hjd5qbI=";
+            };
+            MoonlightLib = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/twkfQtEc/versions/er7S98Q1/moonlight-neoforge-1.21.1-3.0.14.jar";
+              sha256 = "sha256-fsJX7c4dR4PTpRQ/PyN90GDTFAot/PRlIqUFIREHKs0=";
             };
           });
         };

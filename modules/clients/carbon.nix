@@ -52,7 +52,7 @@
       globalprotect
       helium-browser
       obs-studio
-      prism-launcher
+      prismlauncher
       qbittorrent
       remmina
       rustdesk

@@ -1,7 +1,14 @@
 {inputs, ...}: {
   flake.nixosModules.prismlauncher = {pkgs, ...}: {
     environment.systemPackages = [
-      inputs.prismlauncher.packages.${pkgs.stdenv.hostPlatform.system}.prismlauncher
+      (let
+        prism = inputs.prismlauncher.packages.${pkgs.stdenv.hostPlatform.system};
+      in
+        prism.prismlauncher.override {
+          prismlauncher-unwrapped = prism.prismlauncher-unwrapped.overrideAttrs (old: {
+            nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.wrapGAppsHook3];
+          });
+        })
     ];
   };
 

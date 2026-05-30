@@ -22,10 +22,11 @@
           feniren = "c4cd6e4b-6d65-4b81-aa81-435739afb3ac";
           hotflare = "3abc73cc-23ab-4cf3-962e-fa6479a764c5";
           deerkektive = "ee074209-3c6e-49ef-bf99-d246a36c62d5";
+          pigjawa = "5b796499-d53f-4784-b842-d35251b47ced";
         };
 
         serverProperties = {
-          motd = "Khoi's GCS Minecraft Server";
+          motd = "GCS and Friends!";
           gamemode = "survival";
           difficulty = "hard";
           simulation-distance = 8;
@@ -33,8 +34,8 @@
           white-list = true;
           enforce-secure-profile = false;
           view-distance = 32;
-          level-name = "GCS World (1)";
-          level-seed = "patient yaoi";
+          level-name = "GCS and Friends (1)";
+          level-seed = "67";
 
           # Remote console.
           enable-rcon = true;
@@ -185,6 +186,10 @@
             url = "https://cdn.modrinth.com/data/gTuTFFyz/versions/3ZycbXog/upgrade_aquatic-1.21.1-7.0.1.jar";
             sha256 = "sha256-rE7ezDQUNcOIk9hZZAdKLgnjIuP7Mr6T0I8qMWXA6+c=";
           };
+          AlexsMobs = pkgs.fetchurl {
+            url = "https://cdn.modrinth.com/data/EmNhnNnt/versions/KSgki4uc/alexsmobs-1.22.17.jar";
+            sha256 = "sha256-blAoVfeeTJ8qEdVgqbiKOrKVqjeMRLDwoN2V+V0DAaY=";
+          };
 
           # Decorations.
           Supplementaries = pkgs.fetchurl {
@@ -235,7 +240,22 @@
             url = "https://cdn.modrinth.com/data/XaDC71GB/versions/wiffJSbz/lithostitched-1.7.9-neoforge-21.1.jar";
             sha256 = "sha256-naWCbjSfiljcpSb3r87JzdfWkGV3lFJCyHRiqm3rze4=";
           };
+          Citadel = pkgs.fetchurl {
+            url = "https://cdn.modrinth.com/data/XjY0RcQj/versions/mIylVpkN/citadel-1.21.1-2.7.6.jar";
+            sha256 = "sha256-nhJGjEnlqVt62/IrO00FvFVWWYm4nEC5hc1zvf5jw8I=";
+          };
         });
+
+        symlinks."config/alexsmobs-common.toml".value = {
+          general = {
+            giveBookOnStartup = false;
+          };
+
+          spawning = {
+            straddlerSpawnWeight = 30;
+            sunbirdSpawnRolls = 18;
+          };
+        };
       };
     };
   };

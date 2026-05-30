@@ -25,6 +25,11 @@
           pigjawa = "5b796499-d53f-4784-b842-d35251b47ced";
         };
 
+        operators = {
+          realnamesurname = "f7280f43-8832-436f-9e1b-a4b3c69b3505";
+          jathpor = "c620fe38-f8d6-4216-985d-f9bc5d300b91";
+        };
+
         serverProperties = {
           motd = "GCS and Friends!";
           gamemode = "survival";
@@ -34,8 +39,10 @@
           white-list = true;
           enforce-secure-profile = false;
           view-distance = 32;
-          level-name = "GCS and Friends (1)";
+          level-name = "GCS and Friends (2)";
           level-seed = "67";
+
+          spawn-protection = 0;
 
           # Remote console.
           enable-rcon = true;
@@ -139,7 +146,15 @@
             sha256 = "sha256-SBWxm4NUHwnLpVbiImErxd3MMffEuiGY9LTWN2zKiy4=";
           };
 
-          # Gamplay tweaks.
+          # Gameplay tweaks.
+          SimpleVoiceChat = pkgs.fetchurl {
+            url = "https://cdn.modrinth.com/data/9eGKb6K1/versions/eFhbQnrh/voicechat-neoforge-1.21.1-2.6.18.jar";
+            sha256 = "sha256-+w3B9Ls29HH6/Ib+4SuWPwNt341GImU1CdiEu+2WseU=";
+          };
+          Corpse = pkgs.fetchurl {
+            url = "https://cdn.modrinth.com/data/WrpuIfhw/versions/Zwf8nv8y/corpse-neoforge-1.21.1-1.1.13.jar";
+            sha256 = "sha256-gNmE8KF9loIgEpzFjt1cnyil9hqE7GfcxBIopG36S7E=";
+          };
           EnderDragonFightRemastered = pkgs.fetchurl {
             url = "https://cdn.modrinth.com/data/HQsBdHGd/versions/mCpyMtM9/edf-remastered-5.0.0.jar";
             sha256 = "sha256-t7hPsOdiFD8unXFEsMpkRpDLqw2HSOg0sUz27Y7dQgQ=";
@@ -246,6 +261,7 @@
           };
         });
 
+        # Server configs for Alex's Mobs.
         symlinks."config/alexsmobs-common.toml".value = {
           general = {
             giveBookOnStartup = false;
@@ -255,6 +271,14 @@
             straddlerSpawnWeight = 30;
             sunbirdSpawnRolls = 18;
           };
+        };
+
+        # Voice chat server configs.
+        symlinks."config/voicechat/voicechat-server.properties".value = {
+          port = 24467;
+          voice_host = "gcs.mc.marked01one.live:24467";
+          max_voice_distance = 90;
+          whisper_distance = 36;
         };
       };
     };

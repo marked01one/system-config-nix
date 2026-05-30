@@ -73,6 +73,13 @@
 
     # Run Minecraft servers declaratively on NixOS.
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    prismlauncher.url = "github:PrismLauncher/PrismLauncher";
   };
 
   outputs = {...} @ inputs:

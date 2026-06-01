@@ -23,6 +23,11 @@
           hotflare = "3abc73cc-23ab-4cf3-962e-fa6479a764c5";
           deerkektive = "ee074209-3c6e-49ef-bf99-d246a36c62d5";
           pigjawa = "5b796499-d53f-4784-b842-d35251b47ced";
+          kiyonetcat = "6d59a749-6523-4097-9aff-63e08566b1e9";
+          xmona_ = "c295b318-689b-4aab-b456-568f175a3b6f";
+          taffykat = "448eca8b-b531-4b54-a8e8-e24f3dfb8202";
+          jo_spaghetti = "437c63b1-9974-49fb-9e79-52f2ebf5e3c2";
+          steve_funky = "46afa971-0673-4346-9e2e-777f36dce491";
         };
 
         operators = {
@@ -147,6 +152,10 @@
           };
 
           # Gameplay tweaks.
+          JEI = pkgs.fetchurl {
+            url = "https://cdn.modrinth.com/data/u6dRKJwZ/versions/YAcQ6elZ/jei-1.21.1-neoforge-19.27.0.340.jar";
+            sha256 = "sha256-iq9UdDLxtJWCObA2NWuRBpL+QPhYwwc9mW9Wu/fJmCY=";
+          };
           SimpleVoiceChat = pkgs.fetchurl {
             url = "https://cdn.modrinth.com/data/9eGKb6K1/versions/eFhbQnrh/voicechat-neoforge-1.21.1-2.6.18.jar";
             sha256 = "sha256-+w3B9Ls29HH6/Ib+4SuWPwNt341GImU1CdiEu+2WseU=";
@@ -270,6 +279,8 @@
           spawning = {
             straddlerSpawnWeight = 30;
             sunbirdSpawnRolls = 18;
+            murmurSpawnWeight = 0;
+            caveCentipedeSpawnWeight = 0;
           };
         };
 

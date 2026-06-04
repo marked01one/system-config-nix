@@ -5,7 +5,7 @@
   config,
   ...
 }: {
-  flake.nixosModules.podman-spark-bytes = {
+  flake.nixosModules.podman-spark-bytes = {...}: {
     # Runtime
     virtualisation.podman = lib.mkIf (!config.virtualisation.podman) {
       enable = true;

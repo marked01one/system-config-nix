@@ -55,7 +55,7 @@
           "rcon.port" = 25577;
         };
 
-        jvmOpts = "-Xms4G -Xmx4G";
+        jvmOpts = "-Xms6G -Xmx6G";
 
         # Symlinking mods to the "mods" folder in the server.
         symlinks."mods" = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
@@ -83,6 +83,14 @@
           Lithium = pkgs.fetchurl {
             url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/RXHf27Wv/lithium-neoforge-0.15.3%2Bmc1.21.1.jar";
             sha256 = "sha256-plSIYr0T/47qZ0fPYd9QyDdKFqItBnYU5BTtYA7ubYM=";
+          };
+          Clumps = pkgs.fetchurl {
+            url = "https://cdn.modrinth.com/data/Wnxd13zP/versions/jo7lDoK4/Clumps-neoforge-1.21.1-19.0.0.1.jar";
+            sha256 = "sha256-tSTM2s4u+P0Z9bIHT33hEDrFBlxSVT8GTADgmDRsKT4=";
+          };
+          Spark = pkgs.fetchurl {
+            url = "https://cdn.modrinth.com/data/l6YH9Als/versions/v5qtqRQi/spark-1.10.124-neoforge.jar";
+            sha256 = "sha256-ZH6Kga++QU26HfS6Ff0GxdMtTLVE5ogoQF6OB0wuFts=";
           };
 
           # World generation.

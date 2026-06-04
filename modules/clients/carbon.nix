@@ -37,6 +37,7 @@
       nix-ld # Enable NixOS to run dynamically-linked executables.
       backlight
       neovim
+      compose2nix
 
       # Programming languages
       python

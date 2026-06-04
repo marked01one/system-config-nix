@@ -1,6 +1,10 @@
-{inputs, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.nixosModules.nix-minecraft = {pkgs, ...}: {
-    imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
+    imports = [inputs.nix-minecraft.nixosModules.minecraft-servers self.nixosModules.podman-spark-bytes];
     nixpkgs.overlays = [inputs.nix-minecraft.overlay];
 
     environment.systemPackages = with pkgs; [mcrcon];

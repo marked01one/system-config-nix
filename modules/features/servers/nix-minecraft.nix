@@ -299,6 +299,12 @@
           max_voice_distance = 90;
           whisper_distance = 36;
         };
+
+        symlinks."config/spark/config.json".value = {
+          backgroundProfiler = true;
+          backgroundProfilerInterval = 10;
+          backgroundProfilerEngine = "java";
+        };
       };
     };
   };

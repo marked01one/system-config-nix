@@ -307,7 +307,7 @@
         symlinks."config/spark/config.json".value = {
           backgroundProfiler = true;
           backgroundProfilerInterval = 10;
-          backgroundProfilerEngine = "java";
+          backgroundProfilerEngine = "async";
         };
       };
     };

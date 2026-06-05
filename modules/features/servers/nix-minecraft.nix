@@ -32,6 +32,7 @@
           taffykat = "448eca8b-b531-4b54-a8e8-e24f3dfb8202";
           jo_spaghetti = "437c63b1-9974-49fb-9e79-52f2ebf5e3c2";
           steve_funky = "46afa971-0673-4346-9e2e-777f36dce491";
+          c9_pepe = "1dfdf0e9-e772-49cf-a464-b89ca2473ba2";
         };
 
         operators = {

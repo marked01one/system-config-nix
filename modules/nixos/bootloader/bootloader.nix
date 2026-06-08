@@ -45,7 +45,7 @@
 
         interface = {
           branding = "Khoi's Digital Portal...";
-          brandingColor = 7;
+          brandingColor = "c6d0f5";
         };
 
         graphicalTerminal = {

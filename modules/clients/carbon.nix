@@ -38,6 +38,7 @@
       backlight
       neovim
       compose2nix
+      fwupd
 
       # Programming languages
       python

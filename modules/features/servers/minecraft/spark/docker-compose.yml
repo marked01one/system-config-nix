@@ -2,7 +2,7 @@ services:
   bytebin:
     image: ghcr.io/lucko/bytebin
     ports:
-      - 3000:8080
+      - 23380:8080
     volumes:
       - data:/var/lib/bytebin/content
       - db:/var/lib/bytebin/db
@@ -15,7 +15,7 @@ services:
   bytesocks:
     image: ghcr.io/lucko/bytesocks
     ports:
-      - 3000:8080
+      - 23381:8080
     environment:
       # You can configure bytesocks using
       # environment variables.

@@ -3,7 +3,12 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.nix-minecraft = {pkgs, ...}: {
+  flake.nixosModules.nix-minecraft = {pkgs, ...}: let 
+    jmx-agent = pkgs.fetchurl {
+      url = "https://search.maven.org/remotecontent?filepath=org/jolokia/jolokia-agent-jvm/2.6.0/jolokia-agent-jvm-2.6.0-javaagent.jar";
+      sha256 = "sha256-lcLBIwlwrArXG5y1VrilXExgCOn/13Rb53l/R3Egtq4=";
+    };
+  in {
     imports = [inputs.nix-minecraft.nixosModules.minecraft-servers self.nixosModules.podman-spark-bytes];
     nixpkgs.overlays = [inputs.nix-minecraft.overlay];
 
@@ -63,7 +68,10 @@
           "rcon.port" = 25577;
         };
 
-        jvmOpts = "-Xms6G -Xmx6G";
+        jvmOpts = ''
+          -Xms6G -Xmx6G \
+          -javaagent:${jmx-agent}=port=23387,host=0.0.0.0
+        '';
 
         # Symlinking mods to the "mods" folder in the server.
         symlinks."mods" = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {

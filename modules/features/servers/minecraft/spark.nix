@@ -26,6 +26,7 @@
     virtualisation.oci-containers.backend = "podman";
 
     # Containers
+    # Bytebin (https://github.com/lucko/bytebin)
     virtualisation.oci-containers.containers."spark-bytebin" = {
       image = "ghcr.io/lucko/bytebin";
       environment = {
@@ -62,6 +63,8 @@
       partOf = ["podman-compose-spark-root.target"];
       wantedBy = ["podman-compose-spark-root.target"];
     };
+
+    # Bytesocks (https://github.com/lucko/bytesocks)
     virtualisation.oci-containers.containers."spark-bytesocks" = {
       image = "ghcr.io/lucko/bytesocks";
       environment = {

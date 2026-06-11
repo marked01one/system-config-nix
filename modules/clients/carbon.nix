@@ -38,6 +38,7 @@
       backlight
       neovim
       compose2nix
+      fwupd
 
       # Programming languages
       python
@@ -146,6 +147,7 @@
     ];
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-intel"];
+    boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.extraModulePackages = [];
 
     fileSystems."/" = {

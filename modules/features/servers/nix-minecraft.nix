@@ -3,7 +3,12 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.nix-minecraft = {pkgs, ...}: {
+  flake.nixosModules.nix-minecraft = {pkgs, ...}: let 
+    jmx-agent = pkgs.fetchurl {
+      url = "https://search.maven.org/remotecontent?filepath=org/jolokia/jolokia-agent-jvm/2.6.0/jolokia-agent-jvm-2.6.0-javaagent.jar";
+      sha256 = "sha256-lcLBIwlwrArXG5y1VrilXExgCOn/13Rb53l/R3Egtq4=";
+    };
+  in {
     imports = [inputs.nix-minecraft.nixosModules.minecraft-servers self.nixosModules.podman-spark-bytes];
     nixpkgs.overlays = [inputs.nix-minecraft.overlay];
 
@@ -33,6 +38,9 @@
           jo_spaghetti = "437c63b1-9974-49fb-9e79-52f2ebf5e3c2";
           steve_funky = "46afa971-0673-4346-9e2e-777f36dce491";
           c9_pepe = "1dfdf0e9-e772-49cf-a464-b89ca2473ba2";
+
+          ballabananana = "a67ffaba-8ded-49ee-afe4-fafce9db06f1";
+          teletubbies39 = "a67ffaba-8ded-49ee-afe4-fafce9db06f1";
         };
 
         operators = {
@@ -60,7 +68,10 @@
           "rcon.port" = 25577;
         };
 
-        jvmOpts = "-Xms6G -Xmx6G";
+        jvmOpts = ''
+          -Xms6G -Xmx6G \
+          -javaagent:${jmx-agent}=port=23387,host=0.0.0.0
+        '';
 
         # Symlinking mods to the "mods" folder in the server.
         symlinks."mods" = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
@@ -290,10 +301,27 @@
           };
 
           spawning = {
-            straddlerSpawnWeight = 30;
-            sunbirdSpawnRolls = 18;
+            straddlerSpawnWeight = 0;
+            stradpoleSpawnWeight = 0;
+            sunbirdSpawnWeight = 0;
             murmurSpawnWeight = 0;
             caveCentipedeSpawnWeight = 0;
+            grizzlyBearSpawnWeight = 0;
+            roadrunnerSpawnWeight = 0;
+            crocodileSpawnWeight = 0;
+            flySpawnWeight = 0;
+            tigerSpawnWeight = 0;
+            boneSerpentWeight = 0;
+            crowSpawnWeight = 0;
+            crowsStealCrops = false;
+            snowLeopardSpawnWeight = 0;
+            dropbearSpawnwieght = 0;
+            anacondaSpawnWeight = 0;
+            froststalkerSpawnWeight = 0;
+            skelewagSpawnWeight = 0;
+            komodoDragonSpawnWeight = 0;
+            soulVultureSpawnWeight = 0;
+            tusklinSpawnWeight = 0;
           };
         };
 
@@ -305,6 +333,7 @@
           whisper_distance = 36;
         };
 
+        # spark profiler config.
         symlinks."config/spark/config.json".value = {
           backgroundProfiler = true;
           backgroundProfilerInterval = 10;

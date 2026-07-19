@@ -33,7 +33,6 @@
       nix-tools # Nix tools
       fonts # Font configs
       fingerprint # Fingerprint support
-      laptop # Power configs for laptop
       nix-ld # Enable NixOS to run dynamically-linked executables.
       backlight
       neovim
@@ -51,18 +50,18 @@
       btop
       firefox
       git
-      globalprotect
+      # globalprotect
       helium-browser
       obs-studio
       prismlauncher
       qbittorrent
       remmina
-      rustdesk
+      # rustdesk
       steam
       tailscale
-      unityhub
       vscode
       zoom-us
+      rapidraw
     ];
 
     # Networking configs.
@@ -107,7 +106,7 @@
         builders-use-substitutes = true;
       };
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-      distributedBuilds = true;
+      distributedBuilds = false;
       buildMachines = [
         {
           hostName = "hydrogen";

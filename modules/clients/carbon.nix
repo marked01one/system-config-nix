@@ -62,6 +62,7 @@
       vscode
       zoom-us
       rapidraw
+      libreoffice
     ];
 
     # Networking configs.

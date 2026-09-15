@@ -1,5 +1,9 @@
-# Note-taking app and text editor.
-# Options: https://home-manager-options.extranix.com/?query=obsidian&release=master
+## ========================================================================== ##
+##
+## Note-taking app and text editor.
+## Options: https://home-manager-options.extranix.com/?query=obsidian&release=master
+##
+## ========================================================================== ##
 {self, ...}: {
   flake.nixosModules.obsidian = {...}: {
   };
@@ -7,57 +11,78 @@
   flake.homeModules.obsidian = {pkgs, ...}: let
     local-pkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
 
-    # Obsidian community plugins declarations.
-    plugins = {
-      dataview = {
-        pkg = local-pkgs.obsidian-dataview;
-        enable = true;
-        settings = {
-          enableDataviewJs = true;
-          enableInlineDataviewJs = true;
-          warnOnEmptyResult = true;
-          defaultDateFormat = "dd/MM/yyyy";
-          defaultDateTimeFormat = "HH:mm - dd/MM/yyyy";
-        };
-      };
+    ## ======== OBSIDIAN PLUGINS ============================================ ##
 
-      calendar = {
-        pkg = local-pkgs.obsidian-calendar;
-        enable = true;
-        settings = {
-          shouldConfirmBeforeCreate = true;
-          weekStart = "locale";
-          wordsPerDot = 250;
-          showWeeklyNote = false;
-        };
-      };
-
-      excalidraw = {
-        pkg = local-pkgs.obsidian-excalidraw-plugin;
-        enable = true;
-        settings = {};
-      };
-
-      better-export-pdf = {
-        pkg = local-pkgs.obsidian-better-export-pdf;
-        enable = true;
-        settings = {};
-      };
-
-      relative-line-numbers = {
-        pkg = local-pkgs.obsidian-relative-line-numbers;
-        enable = true;
-        settings = {};
+    plugins.dataview = {
+      pkg = local-pkgs.obsidian-dataview;
+      enable = true;
+      settings = {
+        enableDataviewJs = true;
+        enableInlineDataviewJs = true;
+        warnOnEmptyResult = true;
+        defaultDateFormat = "dd/MM/yyyy";
+        defaultDateTimeFormat = "HH:mm - dd/MM/yyyy";
       };
     };
 
-    # Obsidian themes declarations.
-    themes = {
-      tokyonight = {
-        pkg = local-pkgs.obsidian-theme-tokyo-night;
-        enable = true;
+    plugins.calendar = {
+      pkg = local-pkgs.obsidian-calendar;
+      enable = true;
+      settings = {
+        shouldConfirmBeforeCreate = true;
+        weekStart = "locale";
+        wordsPerDot = 250;
+        showWeeklyNote = false;
       };
     };
+
+    plugins.excalidraw = {
+      pkg = local-pkgs.obsidian-excalidraw-plugin;
+      enable = true;
+      settings = {};
+    };
+
+    plugins.better-export-pdf = {
+      pkg = local-pkgs.obsidian-better-export-pdf;
+      enable = true;
+      settings = {};
+    };
+
+    plugins.relative-line-numbers = {
+      pkg = local-pkgs.obsidian-relative-line-numbers;
+      enable = true;
+      settings = {};
+    };
+
+    plugins.style-settings = {
+      anuppuccin-dark = {
+        pkg = local-pkgs.obsidian-style-settings;
+        enable = true;
+        settings = {
+          "anuppuccin-theme-settings@@anuppuccin-theme-dark" = "ctp-mocha-old";
+          "anuppuccin-theme-settings@@anuppuccin-light-theme-accents" = "ctp-accent-light-rosewater";
+          "anuppuccin-theme-settings@@anuppuccin-theme-accents" = "ctp-accent-lavender";
+          "anuppuccin-theme-settings@@anuppuccin-accent-toggle" = true;
+          "anuppuccin-theme-settings@@anp-active-line" = "anp-current-line";
+          "anuppuccin-theme-settings@@anp-codeblock-numbers" = true;
+          "anuppuccin-theme-settings@@anp-header-color-toggle" = true;
+          "anuppuccin-theme-settings@@anp-alt-rainbow-style" = "anp-full-rainbow-color-toggle";
+        };
+      };
+    };
+
+    ## ======== OBSIDIAN THEMES ============================================= ##
+
+    themes.tokyonight = {
+      pkg = local-pkgs.obsidian-theme-tokyo-night;
+      enable = true;
+    };
+
+    themes.anuppuccin = {
+      pkg = local-pkgs.obsidian-theme-anuppuccin;
+      enable = true;
+    };
+    ## ======== CONFIGURATIONS ============================================== ##
   in {
     # General settings for Obsidian.
     programs.obsidian.enable = true;
@@ -90,6 +115,7 @@
         ./css/readable-pdf.css
       ];
 
+      # Default Obsidian app settings
       defaultSettings.app = {
         showInlineTitle = false;
         vimMode = true;
@@ -106,6 +132,7 @@
         tabSize = 2;
       };
 
+      # Appareance settings for Obsidian.
       defaultSettings.appearance = {
         interfaceFontFamily = "JetBrainsMono Nerd Font";
         textFontFamily = "JetBrainsMono Nerd Font";
@@ -125,10 +152,11 @@
               calendar
               better-export-pdf
               relative-line-numbers
+              style-settings.anuppuccin-dark
             ];
 
             themes = with themes; [
-              tokyonight
+              anuppuccin
             ];
           };
         };

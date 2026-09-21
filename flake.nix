@@ -68,12 +68,10 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    # YouTube TUI
-    youtube-tui.url = "github:Siriusmart/youtube-tui";
-
     # Run Minecraft servers declaratively on NixOS.
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
+    # Helium browser
     helium = {
       url = "github:schembriaiden/helium-browser-nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";

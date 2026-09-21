@@ -8,7 +8,11 @@
   flake.nixosModules.obsidian = {...}: {
   };
 
-  flake.homeModules.obsidian = {pkgs, ...}: let
+  flake.homeModules.obsidian = {
+    pkgs,
+    lib,
+    ...
+  }: let
     local-pkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
 
     ## ======== OBSIDIAN PLUGINS ============================================ ##
@@ -59,14 +63,15 @@
         pkg = local-pkgs.obsidian-style-settings;
         enable = true;
         settings = {
-          "anuppuccin-theme-settings@@anuppuccin-theme-dark" = "ctp-mocha-old";
-          "anuppuccin-theme-settings@@anuppuccin-light-theme-accents" = "ctp-accent-light-rosewater";
-          "anuppuccin-theme-settings@@anuppuccin-theme-accents" = "ctp-accent-lavender";
-          "anuppuccin-theme-settings@@anuppuccin-accent-toggle" = true;
           "anuppuccin-theme-settings@@anp-active-line" = "anp-current-line";
+          "anuppuccin-theme-settings@@anp-alt-rainbow-style" = "anp-full-rainbow-color-toggle";
           "anuppuccin-theme-settings@@anp-codeblock-numbers" = true;
           "anuppuccin-theme-settings@@anp-header-color-toggle" = true;
-          "anuppuccin-theme-settings@@anp-alt-rainbow-style" = "anp-full-rainbow-color-toggle";
+          "anuppuccin-theme-settings@@anuppuccin-accent-toggle" = true;
+          "anuppuccin-theme-settings@@anuppuccin-light-theme-accents" = "ctp-accent-light-rosewater";
+          "anuppuccin-theme-settings@@anuppuccin-theme-accents" = "ctp-accent-lavender";
+          "anuppuccin-theme-settings@@anuppuccin-theme-dark" = "ctp-mocha-old";
+          "anuppuccin-theme-settings@@anp-decoration-toggle" = true;
         };
       };
     };
@@ -82,6 +87,29 @@
       pkg = local-pkgs.obsidian-theme-anuppuccin;
       enable = true;
     };
+
+    ## ======== FUNCTIONS =================================================== ##
+
+    # Embed files from a given directory into a new Obsidian vault.
+    filesFrom = dir: let
+      removeSuffix = f: let
+        m = builtins.match "(.*)\\.[^.]+" f;
+      in
+        if m == null
+        then f
+        else builtins.head m;
+
+      folder = baseNameOf dir;
+      regular = lib.filterAttrs (_: t: t == "regular") (builtins.readDir dir);
+    in
+      lib.mapAttrs' (file: _:
+        lib.nameValuePair
+        "${folder}__${removeSuffix file}"
+        {
+          source = dir + "/${file}";
+          target = "../${lib.toSentenceCase folder}/${file}";
+        })
+      regular;
     ## ======== CONFIGURATIONS ============================================== ##
   in {
     # General settings for Obsidian.
@@ -106,8 +134,11 @@
         "page-preview"
         "switcher"
         "tag-pane"
-        "templates"
         "word-count"
+        {
+          name = "templates";
+          settings.folder = "Templates";
+        }
       ];
 
       defaultSettings.cssSnippets = [
@@ -142,32 +173,33 @@
         nativeMenus = false;
       };
 
-      vaults = {
-        Notes = {
-          enable = true;
-          target = "/Documents/Obsidian/Notes";
-          settings = {
-            communityPlugins = with plugins; [
-              dataview
-              calendar
-              better-export-pdf
-              relative-line-numbers
-              style-settings.anuppuccin-dark
-            ];
+      # For self-written notes.
+      vaults.notes = {
+        enable = true;
+        target = "/Documents/Obsidian/Notes";
+        settings.extraFiles = filesFrom ./templates;
+        settings = {
+          communityPlugins = with plugins; [
+            dataview
+            calendar
+            better-export-pdf
+            relative-line-numbers
+            style-settings.anuppuccin-dark
+          ];
 
-            themes = with themes; [
-              anuppuccin
-            ];
-          };
+          themes = with themes; [
+            anuppuccin
+          ];
         };
-        NixOS = {
-          enable = true;
-          target = "/Documents/Obsidian/NixOS";
-          settings = {
-            communityPlugins = with plugins; [
-              dataview
-            ];
-          };
+      };
+      # For all NixOS related documentation and online text based resources.
+      vaults.nixos = {
+        enable = true;
+        target = "/Documents/Obsidian/NixOS";
+        settings = {
+          communityPlugins = with plugins; [
+            dataview
+          ];
         };
       };
     };

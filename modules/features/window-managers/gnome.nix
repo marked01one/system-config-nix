@@ -8,6 +8,9 @@
           then "wezterm"
           else "xterm";
       };
+      "org/gnome/desktop/interface" = {
+        text-scaling-factor = 1.5;
+      };
     };
   };
 

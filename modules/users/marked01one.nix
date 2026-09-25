@@ -17,6 +17,9 @@
       # Configuration modules
       default-apps
 
+      # Gnome
+      gnome
+
       # feature modules
       ani-cli
       anydesk
@@ -30,8 +33,6 @@
       teams-for-linux
       vesktop
       wezterm
-      yazi
-      youtube-tui
       yt-dlp
       zsh
     ];

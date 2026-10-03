@@ -41,6 +41,8 @@
 
           ballabananana = "a67ffaba-8ded-49ee-afe4-fafce9db06f1";
           teletubbies39 = "a67ffaba-8ded-49ee-afe4-fafce9db06f1";
+          ferndaburn = "dcc1e85e-3b50-474a-af58-efb6bd7b0513";
+          admorteminimicus = "860d56ac-c878-4ba1-aca2-97c364188571";
         };
 
         operators = {

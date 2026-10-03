@@ -26,12 +26,12 @@
   }: {
     home.packages = (
       # Only add a default if Firefox is not already available
-      lib.optionals (!config.programs.firefox.enable) [pkgs.firefox-devedition]
+      lib.optionals (!config.programs.firefox.enable) [pkgs.firefox-bin]
     );
 
     xdg.mimeApps.defaultApplications = {
       "application/pdf" = [
-        "firefox-devedition.desktop"
+        "firefox.desktop"
       ];
     };
   };

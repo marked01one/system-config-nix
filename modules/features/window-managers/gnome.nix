@@ -40,7 +40,6 @@
       gnome-initial-setup
       gnome-maps
       gnome-music
-      gnome-photos
       gnome-text-editor
       gnome-tour
       gnome-user-docs

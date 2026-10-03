@@ -64,7 +64,7 @@
       polarity.enable = true;
       polarity.override = "dark";
 
-      useWallpaper = true;
+      image.enable = true;
     };
 
     # Declare all 16 base16 colors as session variables to be used by applications

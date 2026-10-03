@@ -69,7 +69,7 @@
       name = "flake-parts-init";
       runtimeInputs = with pkgs; [neovim alejandra];
       text = ''
-        # syntax: shell
+        # shell
         function usage {
           echo "${usageText}"
           exit 1

@@ -12,7 +12,7 @@
   }: {
     programs.firefox = {
       enable = true;
-      package = pkgs.firefox-devedition;
+      package = pkgs.firefox-bin;
       nativeMessagingHosts = [pkgs.firefoxpwa];
 
       # Full list of policies: https://mozilla.github.io/policy-templates/

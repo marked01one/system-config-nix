@@ -96,10 +96,7 @@ in {
 
     # Enable Niri.
     programs.niri.enable = true;
-
-    # Use the unstable branch of Niri.
-    nixpkgs.overlays = [inputs.niri.overlays.niri];
-    programs.niri.package = pkgs.niri-unstable;
+    programs.niri.package = pkgs.niri;
 
     # Importing config files.
     home-manager.users.marked01one.imports = [

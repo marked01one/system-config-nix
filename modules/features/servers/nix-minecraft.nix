@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.nix-minecraft = {pkgs, ...}: let 
+  flake.nixosModules.nix-minecraft = {pkgs, ...}: let
     jmx-agent = pkgs.fetchurl {
       url = "https://search.maven.org/remotecontent?filepath=org/jolokia/jolokia-agent-jvm/2.6.0/jolokia-agent-jvm-2.6.0-javaagent.jar";
       sha256 = "sha256-lcLBIwlwrArXG5y1VrilXExgCOn/13Rb53l/R3Egtq4=";
@@ -24,25 +24,24 @@
         openFirewall = true;
 
         whitelist = {
-          realnamesurname = "f7280f43-8832-436f-9e1b-a4b3c69b3505";
-          jathpor = "c620fe38-f8d6-4216-985d-f9bc5d300b91";
-          leaversa = "dc7891fe-bef2-42a3-a1da-d335d46455bb";
-          plainolsoapbar = "5ab005ff-aaa3-4a06-855f-1a7fa724dce7";
+          ballabananana = "a67ffaba-8ded-49ee-afe4-fafce9db06f1";
+          c9_pepe = "1dfdf0e9-e772-49cf-a464-b89ca2473ba2";
+          deerkektive = "ee074209-3c6e-49ef-bf99-d246a36c62d5";
           feniren = "c4cd6e4b-6d65-4b81-aa81-435739afb3ac";
           hotflare = "3abc73cc-23ab-4cf3-962e-fa6479a764c5";
-          deerkektive = "ee074209-3c6e-49ef-bf99-d246a36c62d5";
-          pigjawa = "5b796499-d53f-4784-b842-d35251b47ced";
-          kiyonetcat = "6d59a749-6523-4097-9aff-63e08566b1e9";
-          xmona_ = "c295b318-689b-4aab-b456-568f175a3b6f";
-          taffykat = "448eca8b-b531-4b54-a8e8-e24f3dfb8202";
+          jathpor = "c620fe38-f8d6-4216-985d-f9bc5d300b91";
           jo_spaghetti = "437c63b1-9974-49fb-9e79-52f2ebf5e3c2";
+          kiyonetcat = "6d59a749-6523-4097-9aff-63e08566b1e9";
+          leaversa = "dc7891fe-bef2-42a3-a1da-d335d46455bb";
+          pigjawa = "5b796499-d53f-4784-b842-d35251b47ced";
+          plainolsoapbar = "5ab005ff-aaa3-4a06-855f-1a7fa724dce7";
+          realnamesurname = "f7280f43-8832-436f-9e1b-a4b3c69b3505";
           steve_funky = "46afa971-0673-4346-9e2e-777f36dce491";
-          c9_pepe = "1dfdf0e9-e772-49cf-a464-b89ca2473ba2";
-
-          ballabananana = "a67ffaba-8ded-49ee-afe4-fafce9db06f1";
+          taffykat = "448eca8b-b531-4b54-a8e8-e24f3dfb8202";
           teletubbies39 = "a67ffaba-8ded-49ee-afe4-fafce9db06f1";
           ferndaburn = "dcc1e85e-3b50-474a-af58-efb6bd7b0513";
           admorteminimicus = "860d56ac-c878-4ba1-aca2-97c364188571";
+          xmona_ = "c295b318-689b-4aab-b456-568f175a3b6f";
         };
 
         operators = {

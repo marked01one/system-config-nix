@@ -39,6 +39,8 @@
           steve_funky = "46afa971-0673-4346-9e2e-777f36dce491";
           taffykat = "448eca8b-b531-4b54-a8e8-e24f3dfb8202";
           teletubbies39 = "a67ffaba-8ded-49ee-afe4-fafce9db06f1";
+          ferndaburn = "dcc1e85e-3b50-474a-af58-efb6bd7b0513";
+          admorteminimicus = "860d56ac-c878-4ba1-aca2-97c364188571";
           xmona_ = "c295b318-689b-4aab-b456-568f175a3b6f";
         };
 

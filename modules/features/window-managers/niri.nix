@@ -8,11 +8,7 @@
 # + https://niri-wm.github.io/niri/Configuration%3A-Introduction.html
 # + https://github.com/sodiboo/niri-flake/blob/main/docs.md
 #
-{
-  self,
-  inputs,
-  ...
-}: let
+{self, inputs, ...}: let
   # Create Niri keybinds by generating all possible prefix-suffix combinations
   # based on inputted suffixes and prefixes.
   # CODE: https://github.com/sodiboo/system/blob/main/personal/niri.mod.nix#L31

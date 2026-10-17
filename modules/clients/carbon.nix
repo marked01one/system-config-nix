@@ -95,11 +95,27 @@
     services.xserver.xkb.layout = "us";
     services.xserver.xkb.variant = "";
 
+    programs.ssh.knownHosts = {
+      hydrogen = {
+        extraHostNames = ["hydrogen" "hydrogen.crane-darter.ts.net" "fd7a:115c:a1e0::8033:c725" "100.82.199.37"];
+        publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOc5tGXyJndhLrOq043iFUOPUHh3slcXhScvpykOOm9Q";
+      };
+      vps-c0808601 = {
+        extraHostNames = ["vps-c0808601.vps.ovh.us" "15.204.88.43"];
+        publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHStVZNyi1cDiIalJ1ij6cshuhMI51HrVZMMXOKAq6ek";
+      };
+      "github.com" = {
+        publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl";
+      };
+    };
+
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
+    # Nix system state verison
     system.stateVersion = "25.11";
 
+    # Nix specific settings
     nix = {
       settings = {
         allowed-users = ["marked01one"];

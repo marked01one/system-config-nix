@@ -1,0 +1,7 @@
+keys:
+  - &admin_marked01one age1pxklj8ujy60mpeuvwgqz4h98q67alxj9syakprhy0a66gdq8asfql7ye9t
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *admin_marked01one

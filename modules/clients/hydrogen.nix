@@ -36,6 +36,7 @@
       compose2nix
 
       # Servers
+      blocky
       immich
       neovim
       ollama

@@ -9,7 +9,7 @@
       sha256 = "sha256-lcLBIwlwrArXG5y1VrilXExgCOn/13Rb53l/R3Egtq4=";
     };
   in {
-    imports = [inputs.nix-minecraft.nixosModules.minecraft-servers self.nixosModules.podman-spark-bytes];
+    imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
     nixpkgs.overlays = [inputs.nix-minecraft.overlay];
 
     environment.systemPackages = with pkgs; [mcrcon];

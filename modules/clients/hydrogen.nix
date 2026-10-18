@@ -12,11 +12,7 @@
     ];
   };
 
-  flake.nixosModules.hydrogen = {
-    config,
-    pkgs,
-    ...
-  }: {
+  flake.nixosModules.hydrogen = {pkgs, ...}: {
     imports = with self.nixosModules; [
       # Users
       marked01one-admin
@@ -87,7 +83,7 @@
       isNormalUser = true;
       description = "marked01one";
       extraGroups = ["networkmanager" "wheel"];
-      packages = with pkgs; [];
+      packages = [];
     };
 
     # Allow unfree packages
@@ -126,7 +122,6 @@
   flake.nixosModules.hydrogen-hardware = {
     config,
     lib,
-    pkgs,
     modulesPath,
     ...
   }: {

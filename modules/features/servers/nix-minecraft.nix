@@ -1,8 +1,4 @@
-{
-  self,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   flake.nixosModules.nix-minecraft = {pkgs, ...}: let
     jmx-agent = pkgs.fetchurl {
       url = "https://search.maven.org/remotecontent?filepath=org/jolokia/jolokia-agent-jvm/2.6.0/jolokia-agent-jvm-2.6.0-javaagent.jar";

@@ -19,8 +19,8 @@
           prefetching = true;
         };
 
-        customDNS.mapping."hydrogen.lan" = "hydrogen";
-        customDNS.rewrite."hydrogen.lan:${config.services.immich.port}" = "immich.hydrogen.lan";
+        customDNS.mapping."hydrogen.lan" = "100.82.199.37";
+        customDNS.rewrite."hydrogen.lan:${toString config.services.immich.port}" = "immich.hydrogen.lan";
       };
     };
   };

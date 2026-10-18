@@ -1,6 +1,11 @@
 {inputs, ...}: {
-  flake.nixosModules.sops = {...}: let
-    sops = inputs.spos-nix.nixosModules.sops;
-  in {
+  flake.nixosModules.sops = {config, ...}: {
+    imports = [
+      inputs.sops-nix.nixosModules.sops
+    ];
+
+    sops.defaultSopsFile = ./../secrets/example.yaml;
+    sops.age.sshKeyPath = ["/etc/ssh/host_id_ed25519"];
+    sops.age.generatedKey = true;
   };
 }
